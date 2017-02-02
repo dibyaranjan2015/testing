@@ -25,16 +25,16 @@ Route::get('/login', function () {
     return view('login');
 	
 });
+Route::post('/','CaremedicosController@store');
 
-Route::get('/blog', function () {
+Route::get('/blog', 'CaremedicosController@blog');
+
+Route::get('/test', 'CaremedicosController@test');
+Route::get('/register', function () {
     return view('blog');
 	
 });
 
-Route::get('/blog', function () {
-    return view('abc');
-	
-});
 
 // Route::get('customer',function(){
 // 	$customer = App\customer::find(1);

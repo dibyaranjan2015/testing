@@ -72,7 +72,109 @@
 	</head>
 
 	<body class="no-trans front-page" style="background-image: url('images/bg1.jpg');background-size: cover;background-repeat: no-repeat;background-attachment: fixed;background-position: center;">
+     <div class="header-container">
+	
+				<!-- header start -->
+				<!-- classes:  -->
+				<!-- "fixed": enables fixed navigation mode (sticky menu) e.g. class="header fixed clearfix" -->
+				<!-- "dark": dark version of header e.g. class="header dark clearfix" -->
+				<!-- "full-width": mandatory class for the full-width menu layout -->
+				<!-- "centered": mandatory class for the centered logo layout -->
+				<!-- ================ --> 
+				<header class="header  fixed head-color clearfix">
+					
+					<div class="container-fluid">
+						<div class="row">
+							<div class="col-md-3">
+								<!-- header-left start -->
+								<!-- ================ -->
+								<div class="header-left clearfix">
 
+									<!-- logo -->
+									<div id="logo" class="logo">
+										<h3><a href="/"><b>CARE MEDICO</b></a></h3>
+									</div>
+									
+								</div>
+								<!-- header-left end -->
+
+							</div>
+							<div class="col-md-9">
+					
+								<!-- header-right start -->
+								<!-- ================ -->
+								<div class="header-right clearfix">
+									
+								<!-- main-navigation start -->
+								<!-- classes: -->
+								<!-- "onclick": Makes the dropdowns open on click, this the default bootstrap behavior e.g. class="main-navigation onclick" -->
+								<!-- "animated": Enables animations on dropdowns opening e.g. class="main-navigation animated" -->
+								<!-- "with-dropdown-buttons": Mandatory class that adds extra space, to the main navigation, for the search and cart dropdowns -->
+								<!-- ================ -->
+								<div class="main-navigation  animated with-dropdown-buttons">
+
+									<!-- navbar start -->
+									<!-- ================ -->
+									<nav class="navbar navbar-default" role="navigation">
+										<div class="container-fluid">
+
+											<!-- Toggle get grouped for better mobile display -->
+											<div class="navbar-header">
+												<button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar-collapse-1">
+													<span class="sr-only">Toggle navigation</span>
+													<span class="icon-bar"></span>
+													<span class="icon-bar"></span>
+													<span class="icon-bar"></span>
+												</button>
+												
+											</div>
+
+											<!-- Collect the nav links, forms, and other content for toggling -->
+											<div class="collapse navbar-collapse" id="navbar-collapse-1">
+												<!-- main-menu -->
+												<ul class="nav navbar-nav pull-right">
+
+													<!-- mega-menu start -->													
+													<li class="active mega-menu">
+														<a href="/">Home</a>
+													</li>
+													<li class="mega-menu">
+														<a href="/">Disease Wiki</a>
+													</li>
+													<li class="mega-menu" style="margin-right: 50px;">
+														<a href="/blog">Blog</a>
+													</li>
+													<!-- mega-menu end -->
+												</ul>
+												<!-- main-menu end -->
+												<ul class="nav navbar pull-right nav-menu-btn">
+													<li>
+														<a href="/signup" class="btn radius-50 btn-default-transparent btn-md">Sign Up</a>
+													</li>
+													<li>
+														<a href="/login" class="btn radius-50 btn-default-transparent btn-md">Log In</a>
+													</li>
+													<!-- mega-menu end -->
+												</ul>
+											</div>
+
+										</div>
+									</nav>
+									<!-- navbar end -->
+
+								</div>
+								<!-- main-navigation end -->	
+								</div>
+								<!-- header-right end -->
+					
+							</div>
+						</div>
+					</div>
+					
+				</header>
+				<!-- header end -->
+			</div>
+			<!-- header-container end -->
 		<!-- scrollToTop -->
 		<!-- ================ -->
 		<div class="scrollToTop circle"><i class="icon-up-open-big"></i></div>

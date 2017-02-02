@@ -139,7 +139,7 @@
 
 													<!-- mega-menu start -->													
 													<li class="mega-menu">
-														<a href="/index">Home</a>
+														<a href="/">Home</a>
 													</li>
 													<li class="mega-menu">
 														<a href="/diseasewiki">Disease Wiki</a>

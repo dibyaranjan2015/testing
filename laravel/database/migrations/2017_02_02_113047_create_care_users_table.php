@@ -4,7 +4,7 @@ use Illuminate\Support\Facades\Schema;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class CreateArticlesTable extends Migration
+class CreateCareUsersTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,8 +13,14 @@ class CreateArticlesTable extends Migration
      */
     public function up()
     {
-        Schema::create('articles', function (Blueprint $table) {
+        Schema::create('care_users', function (Blueprint $table) {
             $table->increments('id');
+            $table->string('username');
+            $table->string('email');
+            $table->string('mob');
+            $table->string('password');
+            $table->string('password1');
+            $table->string('acctype');  
             $table->timestamps();
         });
     }
@@ -26,6 +32,6 @@ class CreateArticlesTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('articles');
+        Schema::dropIfExists('care_users');
     }
 }
