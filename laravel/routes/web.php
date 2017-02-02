@@ -30,6 +30,12 @@ Route::get('/blog', function () {
     return view('blog');
 	
 });
+
+Route::get('/blog', function () {
+    return view('abc');
+	
+});
+
 // Route::get('customer',function(){
 // 	$customer = App\customer::find(1);
 // 	echo $customer ->username;
