@@ -36,17 +36,17 @@
 		<link href='http://fonts.googleapis.com/css?family=PT+Serif' rel='stylesheet' type='text/css'>
 
 		<!-- Bootstrap core CSS -->
-		<link href="assets/bootstrap/css/bootstrap.css" rel="stylesheet">
+		<link href="{{ asset('assets/bootstrap/css/bootstrap.css')}}" rel="stylesheet">
 
 		<!-- Font Awesome CSS -->
-		<link href="assets/fonts/font-awesome/css/font-awesome.css" rel="stylesheet">
+		<link href="{{ asset('assets/fonts/font-awesome/css/font-awesome.css')}}" rel="stylesheet">
 
 		<!-- Fontello CSS -->
-		<link href="assets/fonts/fontello/css/fontello.css" rel="stylesheet">
-		<link href="assets/css/animations.css" rel="stylesheet">		
+		<link href="{{ asset('assets/fonts/fontello/css/fontello.css')}}" rel="stylesheet">
+		<link href="{{ asset('assets/css/animations.css')}}" rel="stylesheet">		
 
 		<!-- the project core CSS file -->
-		<link href="assets/css/style.css" rel="stylesheet" >
+		<link href="{{ asset('assets/css/style.css')}}" rel="stylesheet" >
 		<style type="text/css">
 		.tooltip {
 			background-color: transparent;
@@ -61,7 +61,7 @@
 		</style>
 	</head>
 
-	<body class="no-trans front-page" style="background-image: url('images/bg1.jpg');background-size: inherit;background-repeat: no-repeat;background-attachment: fixed;background-position: center;">
+	<body class="no-trans front-page" style="background-image: url('{{ asset('images/bg1.jpg')}}');background-size: inherit;background-repeat: no-repeat;background-attachment: fixed;background-position: center;">
       <div class="header-container">
 	
 				<!-- header start -->
@@ -224,10 +224,10 @@
 		</div>
 
 
-		<script type="text/javascript" src="assets/plugins/jquery.min.js"></script>
-		<script type="text/javascript" src="assets/bootstrap/js/bootstrap.min.js"></script>
-		<script type="text/javascript" src="assets/plugins/jquery.validate.js"></script>
-		<script type="text/javascript" src="assets/js/validate.js"></script>
+		<script type="text/javascript" src="{{ asset('assets/plugins/jquery.min.js')}}"></script>
+		<script type="text/javascript" src="{{ asset('assets/bootstrap/js/bootstrap.min.js')}}"></script>
+		<script type="text/javascript" src="{{ asset('assets/plugins/jquery.validate.js')}}"></script>
+		<script type="text/javascript" src="{{ asset('assets/js/validate.js')}}"></script>
 		
 		<script>
 			$('#log-redirect').hover(function() {

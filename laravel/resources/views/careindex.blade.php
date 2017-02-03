@@ -39,24 +39,24 @@
 		<link href='http://fonts.googleapis.com/css?family=PT+Serif' rel='stylesheet' type='text/css'>
 
 		<!-- Bootstrap core CSS -->
-		<link href="assets/bootstrap/css/bootstrap.css" rel="stylesheet">
+		<link href="{{ asset('/assets/bootstrap/css/bootstrap.css')}}" rel="stylesheet">
 
 		<!-- Font Awesome CSS -->
-		<link href="assets/fonts/font-awesome/css/font-awesome.css" rel="stylesheet">
+		<link href="{{ asset('/assets/fonts/font-awesome/css/font-awesome.css')}}" rel="stylesheet">
 
 		<!-- Fontello CSS -->
-		<link href="assets/fonts/fontello/css/fontello.css" rel="stylesheet">
+		<link href="{{ asset('/assets/fonts/fontello/css/fontello.css')}}" rel="stylesheet">
 
 		<!-- Plugins -->
-		<link href="assets/plugins/magnific-popup/magnific-popup.css" rel="stylesheet">
-		<link href="assets/plugins/rs-plugin/css/settings.css" rel="stylesheet">
-		<link href="assets/css/animations.css" rel="stylesheet">
-		<link href="assets/plugins/owl-carousel/owl.carousel.css" rel="stylesheet">
-		<link href="assets/plugins/owl-carousel/owl.transitions.css" rel="stylesheet">
-		<link href="assets/plugins/hover/hover-min.css" rel="stylesheet">		
+		<link href="{{ asset('/assets/plugins/magnific-popup/magnific-popup.css') }}" rel="stylesheet">
+		<link href="{{ asset('/assets/plugins/rs-plugin/css/settings.css') }}" rel="stylesheet">
+		<link href="{{ asset('/assets/css/animations.css') }}" rel="stylesheet">
+		<link href="{{ asset('assets/plugins/owl-carousel/owl.carousel.css') }}" rel="stylesheet">
+		<link href="{{ asset('/assets/plugins/owl-carousel/owl.transitions.css') }}" rel="stylesheet">
+		<link href="{{ asset('/assets/plugins/hover/hover-min.css') }}" rel="stylesheet">		
 
 		<!-- the project core CSS file -->
-		<link href="assets/css/style.css" rel="stylesheet" >
+		<link href="{{ asset('/assets/css/style.css') }}" rel="stylesheet" >
 		<style>
 			.footer-list-link {
 				text-decoration: none!important;
@@ -204,7 +204,7 @@
 								<li data-transition="random-static" data-slotamount="7" data-masterspeed="500" data-saveperformance="on" data-title="Introduction">
 								
 								<!-- main image -->
-								<img src="images/banner1.jpg" alt="slidebg1" data-bgposition="center top"  data-bgrepeat="no-repeat" data-bgfit="cover">
+								<img src="{{ asset('/images/banner1.jpg') }}" alt="slidebg1" data-bgposition="center top"  data-bgrepeat="no-repeat" data-bgfit="cover">
 								
 								<!-- Transparent Background -->
 								<div class="tp-caption dark-translucent-bg"
@@ -281,7 +281,7 @@
 								<li data-transition="random-static" data-slotamount="7" data-masterspeed="500" data-saveperformance="on" data-title="Features">
 								
 								<!-- main image -->
-								<img src="images/banner2.jpg" alt="slidebg2" data-bgposition="center top"  data-bgrepeat="no-repeat" data-bgfit="cover">
+								<img src="{{ asset('/images/banner2.jpg') }}" alt="slidebg2')}}" data-bgposition="center top"  data-bgrepeat="no-repeat" data-bgfit="cover">
 
 								<!-- Transparent Background -->
 								<div class="tp-caption dark-translucent-bg"
@@ -721,49 +721,49 @@
 		<!-- JavaScript files placed at the end of the document so the pages load faster -->
 		<!-- ================================================== -->
 		<!-- Jquery and Bootstap core js files -->
-		<script type="text/javascript" src="assets/plugins/jquery.min.js"></script>
-		<script type="text/javascript" src="assets/bootstrap/js/bootstrap.min.js"></script>
+		<script type="text/javascript" src="{{ asset('/assets/plugins/jquery.min.js')}}"></script>
+		<script type="text/javascript" src="{{ asset('/assets/bootstrap/js/bootstrap.min.js')}}"></script>
 
 		<!-- Modernizr javascript -->
-		<script type="text/javascript" src="assets/plugins/modernizr.js"></script>
+		<script type="text/javascript" src="{{ asset('/assets/plugins/modernizr.js') }}"></script>
 
 		<!-- jQuery Revolution Slider  -->
-		<script type="text/javascript" src="assets/plugins/rs-plugin/js/jquery.themepunch.tools.min.js"></script>
-		<script type="text/javascript" src="assets/plugins/rs-plugin/js/jquery.themepunch.revolution.min.js"></script>
+		<script type="text/javascript" src="{{ asset('/assets/plugins/rs-plugin/js/jquery.themepunch.tools.min.js')}}"></script>
+		<script type="text/javascript" src="{{ asset('/assets/plugins/rs-plugin/js/jquery.themepunch.revolution.min.js')}}"></script>
 
 		
 		
 
 		<!-- Isotope javascript -->
-		<script type="text/javascript" src="assets/plugins/isotope/isotope.pkgd.min.js"></script>
+		<script type="text/javascript" src="{{ asset('/assets/plugins/isotope/isotope.pkgd.min.js')}}"></script>
 		
 		<!-- Magnific Popup javascript -->
-		<script type="text/javascript" src="assets/plugins/magnific-popup/jquery.magnific-popup.min.js"></script>
+		<script type="text/javascript" src="{{ asset('/assets/plugins/magnific-popup/jquery.magnific-popup.min.js')}}"></script>
 		
 		<!-- Appear javascript -->
-		<script type="text/javascript" src="assets/plugins/waypoints/jquery.waypoints.min.js"></script>
+		<script type="text/javascript" src="{{ asset('/assets/plugins/waypoints/jquery.waypoints.min.js')}}"></script>
 
 		<!-- Count To javascript -->
-		<script type="text/javascript" src="assets/plugins/jquery.countTo.js"></script>
+		<script type="text/javascript" src="{{ asset('/assets/plugins/jquery.countTo.js')}}"></script>
 		
 		<!-- Parallax javascript -->
-		<script src="assets/plugins/jquery.parallax-1.1.3.js"></script>
+		<script src="{{ asset('/assets/plugins/jquery.parallax-1.1.3.js')}}"></script>
 
 		<!-- Contact form -->
-		<script src="assets/plugins/jquery.validate.js"></script>
+		<script src="{{ asset('/assets/plugins/jquery.validate.js')}}"></script>
 
 		<!-- Background Video -->
-		<script src="assets/plugins/vide/jquery.vide.js"></script>
+		<script src="{{ asset('/assets/plugins/vide/jquery.vide.js')}}"></script>
 
 		<!-- Owl carousel javascript -->
-		<script type="text/javascript" src="assets/plugins/owl-carousel/owl.carousel.js"></script>
+		<script type="text/javascript" src="{{ asset('/assets/plugins/owl-carousel/owl.carousel.js')}}"></script>
 		
 		<!-- SmoothScroll javascript -->
-		<script type="text/javascript" src="assets/plugins/jquery.browser.js"></script>
-		<script type="text/javascript" src="assets/plugins/SmoothScroll.js"></script>
+		<script type="text/javascript" src="{{ asset('/assets/plugins/jquery.browser.js')}}"></script>
+		<script type="text/javascript" src="{{ asset('/assets/plugins/SmoothScroll.js')}}"></script>
 
 		<!-- Initialization of Plugins -->
-		<script type="text/javascript" src="assets/js/template.js"></script>
+		<script type="text/javascript" src="{{ asset('/assets/js/template.js') }}"></script>
 		
 	</body>
 </html>
