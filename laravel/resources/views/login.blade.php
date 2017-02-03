@@ -199,7 +199,7 @@
 						</div>
 					</div>
 					<div class="form_div" id="patient_form" style="display: none;padding: 0px 20px;">
-						<form action="pages/login.php" method="post">
+						<form action="/check" method="POST">
 							<div class="form-group has-feedback">
 								<input type="email" name="email" class="form-control" placeholder="Email" required></input>
 								<i class="fa fa-user form-control-feedback"></i>
@@ -219,7 +219,7 @@
 						<a href="#" class="logbtn_toggle" id="doctor">Sign In as Doctor</a>
 					</div>
 					<div class="form_div" id="doctor_form" style="display: none;padding: 0px 20px;">
-						<form action="pages/login.php" method="post">
+						<form action="/check" method="post">
 							<div class="form-group has-feedback">
 								<input type="email" name="email" class="form-control" placeholder="Email" required></input>
 								<i class="fa fa-user form-control-feedback"></i>

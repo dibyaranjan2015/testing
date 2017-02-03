@@ -16,18 +16,14 @@ Route::get('/', function () {
 	
 });
 
-Route::get('/signup', function () {
-    return view('signup');
-	
-});
+Route::get('/signup', 'CaremedicosController@signup');
 
-Route::get('/login', function () {
-    return view('login');
-	
-});
-Route::post('/','CaremedicosController@store');
-
+Route::get('/login','CaremedicosController@login');
+Route::post('/login/check','CaremedicosController@check');
+Route::post('/signup/store','CaremedicosController@store');
+Route::get('/signup/store','CaremedicosController@signup');
 Route::get('/blog', 'CaremedicosController@blog');
+Route::get('/userpage/{name}', 'CaremedicosController@user');
 
 Route::get('/test', 'CaremedicosController@test');
 Route::get('/register', function () {

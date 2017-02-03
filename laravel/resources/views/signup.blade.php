@@ -176,10 +176,10 @@
 				<div class="heading" style="padding: 0px;">
 
 					<h2 class="text-default" style="font-size: 1.5em;font-weight: bold;font-style: italic;text-decoration: underline;">Sign Up</h2>
-					<span style="color: #a94442;text-align: center;">
-						 <?php if(isset($_GET['e'])&&$e==1){echo 'All fields are required';} ?> 
+					<span style="color: #a94442;text-align: center; padding-left: 2vw;">
+						 <?php if(isset($error)){echo $error;} ?> 
 					</span>
-					<form id="signupform" action="/" method="POST" enctype = "multipart/form-data" style="padding: 0 20px 0 20px;">
+					<form id="signupform" action="signup/store" method="POST" enctype = "multipart/form-data" style="padding: 0 20px 0 20px;">
 							{{csrf_field()}}
 						<div>
 								<div class="form-group has-feedback">

@@ -16,10 +16,9 @@ class CreateCareUsersTable extends Migration
         Schema::create('care_users', function (Blueprint $table) {
             $table->increments('id');
             $table->string('username');
-            $table->string('email');
+            $table->string('email')->unique();
             $table->string('mob');
             $table->string('password');
-            $table->string('password1');
             $table->string('acctype');  
             $table->timestamps();
         });
