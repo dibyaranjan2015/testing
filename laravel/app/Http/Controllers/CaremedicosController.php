@@ -38,7 +38,7 @@ class CaremedicosController extends Controller
       $password = $request->input('password');
       $password1 = $request->input('password1');
       $acctype = $request->input('acctype');
-      $hashpassword = Hash::make($password1);
+      $hashpassword = md5($password1);
 
 
       $error = '';
@@ -66,7 +66,26 @@ class CaremedicosController extends Controller
 
     // login
     public function check(Request $request){
-        $user = DB::table('care_users')->where('name', 'John')->first();
+        $email_user = $request->input('email');
+        $password = $request->input('password');
+        $password_user = md5($password);
+        $user = DB::table('care_users')->where('email', $email_user)->first();
+        if($user){
+          $name = $user->username;
+          $email_db = $user->email;
+          $password_db = $user->password;
+        
+          if($email_user == $email_db  && $password_user == $password_db){
+            return redirect('/userpage/'.$name);
+            session_start();
+            
+          }else{
+            echo 'incorrect email or password';
+          }
+        }else{
+          $message = 'you must register first';
+          return redirect('/login');
+        }
     }
 
     //user view

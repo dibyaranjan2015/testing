@@ -20,6 +20,7 @@ Route::get('/signup', 'CaremedicosController@signup');
 
 Route::get('/login','CaremedicosController@login');
 Route::post('/login/check','CaremedicosController@check');
+Route::get('/login/check','CaremedicosController@login');
 Route::post('/signup/store','CaremedicosController@store');
 Route::get('/signup/store','CaremedicosController@signup');
 Route::get('/blog', 'CaremedicosController@blog');
