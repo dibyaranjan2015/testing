@@ -69,16 +69,24 @@ class CaremedicosController extends Controller
         $email_user = $request->input('email');
         $password = $request->input('password');
         $password_user = md5($password);
+        $acctype_user = $request->input('type');
         $user = DB::table('care_users')->where('email', $email_user)->first();
         if($user){
           $name = $user->username;
           $email_db = $user->email;
           $password_db = $user->password;
+          $acctype_db = $user->acctype;
         
           if($email_user == $email_db  && $password_user == $password_db){
-            return redirect('/userpage/'.$name);
-            session_start();
-            
+            if($acctype_user == $acctype_db){
+              return redirect('/userpage/'.$name);
+             // session_start();
+            }else{
+               if($acctype_user == 1){$message = 'Login as Doctor';  }
+               if($acctype_user == 2){$message ='Login as Patient'; } 
+                //echo $message;
+               return view('/login',['message' => $message]);
+            }
           }else{
             echo 'incorrect email or password';
           }

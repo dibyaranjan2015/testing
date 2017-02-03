@@ -37,17 +37,17 @@
 		<link href='http://fonts.googleapis.com/css?family=PT+Serif' rel='stylesheet' type='text/css'>
 
 		<!-- Bootstrap core CSS -->
-		<link href="assets/bootstrap/css/bootstrap.css" rel="stylesheet">
+		<link href="{{ asset('assets/bootstrap/css/bootstrap.css')}}" rel="stylesheet">
 
 		<!-- Font Awesome CSS -->
-		<link href="assets/fonts/font-awesome/css/font-awesome.css" rel="stylesheet">
+		<link href="{{ asset('assets/fonts/font-awesome/css/font-awesome.css')}}" rel="stylesheet">
 
 		<!-- Fontello CSS -->
-		<link href="assets/fonts/fontello/css/fontello.css" rel="stylesheet">
-		<link href="assets/css/animations.css" rel="stylesheet">		
+		<link href="{{ asset('assets/fonts/fontello/css/fontello.css')}}" rel="stylesheet">
+		<link href="{{ asset('assets/css/animations.css')}}" rel="stylesheet">		
 
 		<!-- the project core CSS file -->
-		<link href="assets/css/style.css" rel="stylesheet" >
+		<link href="{{ asset('assets/css/style.css')}}" rel="stylesheet" >
 		<style type="text/css">
 			.logbtn_div {
 				text-align: center;
@@ -71,7 +71,7 @@
 		</style>
 	</head>
 
-	<body class="no-trans front-page" style="background-image: url('images/bg1.jpg');background-size: cover;background-repeat: no-repeat;background-attachment: fixed;background-position: center;">
+	<body class="no-trans front-page" style="background-image: url({{ asset('images/bg1.jpg')}});background-size: cover;background-repeat: no-repeat;background-attachment: fixed;background-position: center;">
      <div class="header-container">
 	
 				<!-- header start -->
@@ -182,24 +182,26 @@
 
 		<div style="width: 26%;margin-left: 37%;margin-right: 37%;padding-top: 50px;">
 			<h1><span class="logo-font"><span class="text-default">Care Medico</span></span></h1><br />
+			  <span style="color: red; font-size: 1.2em; margin-left: 5vw;"> <?php if(isset($message)){echo $message;} ?> </span>
 			<div class="widget-container" style="border-radius: 5px;">
 				<div class="heading">
 					<h3 style="color: rgb(5,150,250);margin: 5px;"><b>Login</b></h3><hr />
 					<span style="color: red;"></span>
+					
 					<div id="list">
 						<div class="row">
 							<div class="logbtn_div col-md-6">
-								<div class="logbtn_toggle logbtn_toggles" id="patient"><img src="images/patient.png"></div><br>
+								<div class="logbtn_toggle logbtn_toggles" id="patient"><img src="{{ asset('images/patient.png')}}"></div><br>
 								<span>Patient Login</span>
-							</div>
+							</div> 
 							<div class="logbtn_div col-md-6">
-								<div class="logbtn_toggle logbtn_toggles" id="doctor"><img src="images/doctor.png"></div><br>
+								<div class="logbtn_toggle logbtn_toggles" id="doctor"><img src="{{ asset('images/doctor.png')}}"></div><br>
 								<span>Doctor Login</span>
 							</div>
 						</div>
 					</div>
 					<div class="form_div" id="patient_form" style="display: none;padding: 0px 20px;">
-						<form action="login/check" method="POST">
+						<form action="/login/check" method="POST">
 						{{csrf_field()}}
 							<div class="form-group has-feedback">
 								<input type="email" name="email" class="form-control" placeholder="Email" required></input>
@@ -220,7 +222,7 @@
 						<a href="#" class="logbtn_toggle" id="doctor">Sign In as Doctor</a>
 					</div>
 					<div class="form_div" id="doctor_form" style="display: none;padding: 0px 20px;">
-						<form action="login/check" method="post">
+						<form action="/login/check" method="post">
 						{{csrf_field()}}
 							<div class="form-group has-feedback">
 								<input type="email" name="email" class="form-control" placeholder="Email" required></input>
@@ -231,7 +233,7 @@
 								<i class="fa fa-lock form-control-feedback"></i>
 							</div>
 							<div style="display: none;">
-								<input type="text" name="type" value="1">
+								<input type="text" name="type" value="2">
 							</div>
 							<div class="form-group">
 								&nbsp;<input type="checkbox" name="remember"> &nbsp;Remember Me</input>
@@ -243,12 +245,12 @@
 				</div>
 			</div>
 			<p style="font-size: 1.1em;text-align: center;line-height: .7em;"><a href="forgot.php" style="color: red;">Forgot Password?</a></p>
-			<p style="font-size: 1.1em;text-align: center;line-height: .7em;">New User?<a href="signup.php">Click Here</a></p>
+			<p style="font-size: 1.1em;text-align: center;line-height: .7em;">New User?<a href="/signup">Click Here</a></p>
 		</div>
 
 
-		<script type="text/javascript" src="assets/plugins/jquery.min.js"></script>
-		<script type="text/javascript" src="assets/bootstrap/js/bootstrap.min.js"></script>
+		<script type="text/javascript" src="{{asset('assets/plugins/jquery.min.js')}}"></script>
+		<script type="text/javascript" src="{{asset('assets/bootstrap/js/bootstrap.min.js')}}"></script>
 
 		<script type="text/javascript">
 			$(".logbtn_toggle").click(function() {

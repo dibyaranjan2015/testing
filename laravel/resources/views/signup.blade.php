@@ -179,7 +179,7 @@
 					<span style="color: #a94442;text-align: center; padding-left: 2vw;">
 						 <?php if(isset($error)){echo $error;} ?> 
 					</span>
-					<form id="signupform" action="signup/store" method="POST" enctype = "multipart/form-data" style="padding: 0 20px 0 20px;">
+					<form id="signupform" action="/signup/store" method="POST" enctype = "multipart/form-data" style="padding: 0 20px 0 20px;">
 							{{csrf_field()}}
 						<div>
 								<div class="form-group has-feedback">
