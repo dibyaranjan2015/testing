@@ -6,11 +6,12 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Facades\DB;
 use App\Care_user;
+use Session;
 
 class CaremedicosController extends Controller
 {
     public function blog(){
-       return view('blog');
+      return view('blog');
     }
 
     public function signup(){
@@ -64,7 +65,7 @@ class CaremedicosController extends Controller
    		
    	}
 
-    // login
+     // login
     public function check(Request $request){
         $email_user = $request->input('email');
         $password = $request->input('password');
@@ -79,8 +80,11 @@ class CaremedicosController extends Controller
         
           if($email_user == $email_db  && $password_user == $password_db){
             if($acctype_user == $acctype_db){
+              
+              session_start();
+              Session::put('name',$name);
+
               return redirect('/userpage/'.$name);
-             // session_start();
             }else{
                if($acctype_user == 1){$message = 'Login as Doctor';  }
                if($acctype_user == 2){$message ='Login as Patient'; } 
@@ -99,5 +103,12 @@ class CaremedicosController extends Controller
     //user view
     public function user($name){
       return view('userpage',['name'=>$name]);
+    }
+
+    //logout
+    public function logout(){
+          Session::forget('name');
+          Session::flush();
+      return redirect('/');
     }
 }

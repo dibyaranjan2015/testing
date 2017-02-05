@@ -13,24 +13,32 @@
 
 Route::get('/', function () {
     return view('careindex');
-	
 });
 
 Route::get('/signup', 'CaremedicosController@signup');
+Route::post('/signup/store','CaremedicosController@store');
+Route::get('/signup/store','CaremedicosController@signup');
 
 Route::get('/login','CaremedicosController@login');
 Route::post('/login/check','CaremedicosController@check');
 Route::get('/login/check','CaremedicosController@login');
-Route::post('/signup/store','CaremedicosController@store');
-Route::get('/signup/store','CaremedicosController@signup');
+
 Route::get('/blog', 'CaremedicosController@blog');
 Route::get('/userpage/{name}', 'CaremedicosController@user');
 
+Route::get('/blogtemp','BlogsController@blog');
+
 Route::get('/test', 'CaremedicosController@test');
-Route::get('/register', function () {
-    return view('blog');
-	
-});
+Route::get('/logout','CaremedicosController@logout');
+
+Route::get('/userpage/blog/create', 'BlogsController@index');
+//Route::get('/userpage/blog/store', 'BlogsController@store');
+Route::post('/userpage/blog/store','BlogsController@store');
+
+
+// Route::get('/?logout=1',function(){
+// 	echo 'logout Successful';
+// });
 
 
 // Route::get('customer',function(){

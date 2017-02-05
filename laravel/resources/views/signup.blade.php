@@ -183,16 +183,16 @@
 							{{csrf_field()}}
 						<div>
 								<div class="form-group has-feedback">
-									<input type="text" name="name" class="form-control" placeholder="Name" required></input>
+									<input type="text" name="name" class="form-control" placeholder="Name" required value="{{Request::old('name') }}"></input>
 									<i class="fa fa-user form-control-feedback"></i>
 								</div>
 								<div class="form-group has-feedback">
-									<input type="email" name="email" class="form-control" placeholder="Email Id" required></input>
+									<input type="email" name="email" class="form-control" placeholder="Email Id" required value="{{Request::old('email') }}"></input>
 									<i class="fa fa-envelope form-control-feedback"></i>
 									<span class="email-feedback" style="color: #a94442;text-align: center;"><?php if (isset($e)&& $e == 2) {echo "This email already exists."; } ?></span>
 								</div>
 								<div class="form-group has-feedback">
-									<input type="text" name="mob" class="form-control" placeholder="Contact Details" required></input>
+									<input type="text" name="mob" class="form-control" placeholder="Contact Details" required value="{{Request::old('mob') }}"></input>
 									<i class="fa fa-phone form-control-feedback"></i>
 									<span style="color: #a94442;text-align: center;"><?php if (isset($e)&& $e == 3) {echo "This Mobile already exists."; } ?></span>
 								</div>
@@ -209,6 +209,7 @@
 										<option value="0" disabled>Register as</option>
 										<option value="1">Patient</option>
 										<option value="2">Doctor</option>
+										<!-- <option value="2">Doctor</option> -->
 									</select>
 								</div>
 								<div class="form-group">
