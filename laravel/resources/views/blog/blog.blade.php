@@ -1,6 +1,6 @@
 @extends('master')
 @section('bodyclass')
-onload="setInterval(update_data,100)">
+onload="update_data(); setInterval(update_data,2000);"
 @stop
 @section('script')
 		<script>

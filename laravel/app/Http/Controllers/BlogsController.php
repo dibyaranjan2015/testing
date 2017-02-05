@@ -14,12 +14,12 @@ class BlogsController extends Controller
 
         $blogs = DB::table('blogs')->get();
 
-       return view('blogtemp',['blogs'=>$blogs]);
+       return view('blog.blogtemp',['blogs'=>$blogs]);
     }
 
     public function index()
     {
-      return view('createblog');
+      return view('blog.createblog');
     }
 
    
@@ -37,6 +37,11 @@ class BlogsController extends Controller
         $blog->save();
         return redirect('/userpage/'.$name);
         
+    }
+
+    public function blogshow($id){
+        $blog_per =  DB::table('blogs')->where('id', $id)->first();
+        return view('blog.blogsingle',['blog_per'=>$blog_per]);
     }
 
 

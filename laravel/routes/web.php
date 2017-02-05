@@ -26,7 +26,6 @@ Route::get('/login/check','CaremedicosController@login');
 Route::get('/blog', 'CaremedicosController@blog');
 Route::get('/userpage/{name}', 'CaremedicosController@user');
 
-Route::get('/blogtemp','BlogsController@blog');
 
 Route::get('/test', 'CaremedicosController@test');
 Route::get('/logout','CaremedicosController@logout');
@@ -34,6 +33,8 @@ Route::get('/logout','CaremedicosController@logout');
 Route::get('/userpage/blog/create', 'BlogsController@index');
 //Route::get('/userpage/blog/store', 'BlogsController@store');
 Route::post('/userpage/blog/store','BlogsController@store');
+Route::get('/blogtemp','BlogsController@blog');
+Route::get('/blog/{id}','BlogsController@blogshow');
 
 
 // Route::get('/?logout=1',function(){
