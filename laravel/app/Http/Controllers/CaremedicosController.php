@@ -40,8 +40,8 @@ class CaremedicosController extends Controller
       $password1 = $request->input('password1');
       $acctype = $request->input('acctype');
       $hashpassword = md5($password1);
-      $rows = DB::select('SELECT * FROM care_users WHERE email = ?',[$email]);
-      $rows1 = DB::select('SELECT * FROM care_users WHERE mob = ?',[$mob]);
+      $rows = DB::table('care_users')->where('email', $email)->count();
+      $rows1 = DB::table('care_users')->where('mob', $mob)->count();
       if(($rows==0)&&($rows1==0))
       {
              $error = '';
@@ -62,6 +62,8 @@ class CaremedicosController extends Controller
                DB::table('care_users')->insert(
                    ['username'=>$name , 'email' => $email ,'mob'=>$mob,'password' =>$hashpassword , 'acctype'=>$acctype]
                  );
+                  session_start();
+                  Session::put('name',$name);
                   return redirect('/userpage/'.$name);
               }
       }
