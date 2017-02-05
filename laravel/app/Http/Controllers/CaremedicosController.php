@@ -40,28 +40,38 @@ class CaremedicosController extends Controller
       $password1 = $request->input('password1');
       $acctype = $request->input('acctype');
       $hashpassword = md5($password1);
+      $rows = DB::select('SELECT * FROM care_users WHERE email = ?',[$email]);
+      $rows1 = DB::select('SELECT * FROM care_users WHERE mob = ?',[$mob]);
+      if(($rows==0)&&($rows1==0))
+      {
+             $error = '';
+             if($name==''){
+               $error = 'Enter your name </br>';
+               return view('signup',['error'=>$error]);
 
+             }elseif($email == ''){
+               $error = 'Enter the email Id';
+               return view('signup',['error'=>$error]);
 
-      $error = '';
-      if($name==''){
-        $error = 'Enter your name </br>';
-        return view('signup',['error'=>$error]);
+             }elseif($password == '' || $password1=='' || ($password != $password1)){
+               $error ='Error in password';
+                return view('signup',['error'=>$error]);
 
-      }elseif($email == ''){
-        $error = 'Enter the email Id';
-        return view('signup',['error'=>$error]);
-
-      }elseif($password == '' || $password1=='' || ($password != $password1)){
-        $error ='Error in password';
-   			return view('signup',['error'=>$error]);
-
-   		}else{
-   			// Care_user::create($datainput);
-        DB::table('care_users')->insert(
-            ['username'=>$name , 'email' => $email ,'mob'=>$mob,'password' =>$hashpassword , 'acctype'=>$acctype]
-          );
-   		    return redirect('/userpage/'.$name);
-   		}
+              }else{
+                // Care_user::create($datainput);
+               DB::table('care_users')->insert(
+                   ['username'=>$name , 'email' => $email ,'mob'=>$mob,'password' =>$hashpassword , 'acctype'=>$acctype]
+                 );
+                  return redirect('/userpage/'.$name);
+              }
+      }
+      else if ($rows!=0) {
+        return view('signup',['error'=>'A user with that email id is already registered! Please sign up with a different email id.']);
+      }
+      else
+      {
+          return view('signup',['error'=>'A user with that mobile number is already registered! Please sign up with a different mobile number.']);
+      }
    		
    	}
 
