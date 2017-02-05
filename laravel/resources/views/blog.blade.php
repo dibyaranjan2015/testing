@@ -1,73 +1,14 @@
-<?php
-	// require_once 'inc/autoload.php';
-	
-	// $db = new DB();
-	// if (isset($_SESSION['id'])) {
-	// 	$where = array(
-	// 				'usrid' => $_SESSION['id']
-	// 			);
+@extends('master')
+@section('bodyclass')
+onload="setInterval(update_data,100)">
+@stop
+@section('script')
+		<script>
 
-	// 	$results = $db->select('caremedico', 'users', $where);
-	// 	$row = mysql_fetch_array($results);
-	// 	$user_id = $_SESSION['id'];
-	// 	$user_name = $row['name'];
-	// 	$email = $row['email'];
-	// 	#$pic = $row['pro_pic'];
-	// }
-?>
-<script type="text/javascript" src="https://cdn.ywxi.net/js/1.js" async></script>
-<!DOCTYPE html>
-<!--[if IE 9]> <html lang="en" class="ie9"> <![endif]-->
-<!--[if !IE]><!-->
-<html lang="en">
-	<!--<![endif]-->
-<head>
-		<meta charset="utf-8">
-		<title>Care Medico</title>
-		<meta name="description" content="">
-		<meta name="author" content="">
+		  	//FACEBOOK UP
+		  	//AJAX DOWN
 
-		<!-- Mobile Meta -->
-		<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-		<!-- Favicon -->
-		<link rel="shortcut icon" href="images/favicon.ico">
-
-		<!-- Web Fonts -->
-		<link href='http://fonts.googleapis.com/css?family=Roboto:400,300,300italic,400italic,500,500italic,700,700italic' rel='stylesheet' type='text/css'>
-		<link href='http://fonts.googleapis.com/css?family=Raleway:700,400,300' rel='stylesheet' type='text/css'>
-		<link href='http://fonts.googleapis.com/css?family=Pacifico' rel='stylesheet' type='text/css'>
-		<link href='http://fonts.googleapis.com/css?family=PT+Serif' rel='stylesheet' type='text/css'>
-
-		<!-- Bootstrap core CSS -->
-		<link href="assets/bootstrap/css/bootstrap.css" rel="stylesheet">
-
-		<!-- Font Awesome CSS -->
-		<link href="assets/fonts/font-awesome/css/font-awesome.css" rel="stylesheet">
-
-		<!-- Fontello CSS -->
-		<link href="assets/fonts/fontello/css/fontello.css" rel="stylesheet">
-
-		<!-- Plugins -->
-		<link href="assets/plugins/magnific-popup/magnific-popup.css" rel="stylesheet">
-		<link href="assets/plugins/rs-plugin/css/settings.css" rel="stylesheet">
-		<link href="assets/css/animations.css" rel="stylesheet">
-		<link href="assets/plugins/owl-carousel/owl.carousel.css" rel="stylesheet">
-		<link href="assets/plugins/owl-carousel/owl.transitions.css" rel="stylesheet">
-		<link href="assets/plugins/hover/hover-min.css" rel="stylesheet">		
-
-		<!-- the project core CSS file -->
-		<link href="assets/css/style.css" rel="stylesheet" >
-		<link href="assets/css/editor.css" rel="stylesheet">
-	</head>
-
-	<!-- body classes:  -->
-	<!-- "boxed": boxed layout mode e.g. <body class="boxed"> -->
-	<!-- "pattern-1 ... pattern-9": background patterns for boxed layout mode e.g. <body class="boxed pattern-1"> -->
-	<!-- "transparent-header": makes the header transparent and pulls the banner to top -->
-	<!-- "page-loader-1 ... page-loader-6": add a page loader to the page (more info @components-page-loaders.html) -->
-	<body class="no-trans front-page transparent-header" onload="setInterval(update_data,100)">
-		<script type="text/javascript">
 			function update_data(){
 				$.ajax({
 	                url:'/blogtemp',
@@ -84,135 +25,11 @@
 	            });
 			}
 		</script>
-
-		<a href="#" class="round-btn postAdd"><i class="fa fa-plus"></i></a>
+@stop
 		
-		<!-- page wrapper start -->
-		<!-- ================ -->
-		<div class="page-wrapper">
+
 		
-			<!-- header-container start -->
-			<div class="header-container">
-	
-				<!-- header start -->
-				<!-- classes:  -->
-				<!-- "fixed": enables fixed navigation mode (sticky menu) e.g. class="header fixed clearfix" -->
-				<!-- "dark": dark version of header e.g. class="header dark clearfix" -->
-				<!-- "full-width": mandatory class for the full-width menu layout -->
-				<!-- "centered": mandatory class for the centered logo layout -->
-				<!-- ================ --> 
-				<header class="header fixed  head-color clearfix">
-					
-					<div class="container-fluid">
-						<div class="row">
-							<div class="col-md-3">
-								<!-- header-left start -->
-								<!-- ================ -->
-								<div class="header-left clearfix">
-
-									<!-- logo -->
-									<div id="logo" class="logo">
-										<h3><a href="index.html"><b>CARE MEDICO</b></a></h3>
-									</div>
-									
-								</div>
-								<!-- header-left end -->
-
-							</div>
-							<div class="col-md-9">
-					
-								<!-- header-right start -->
-								<!-- ================ -->
-								<div class="header-right clearfix">
-									
-								<!-- main-navigation start -->
-								<!-- classes: -->
-								<!-- "onclick": Makes the dropdowns open on click, this the default bootstrap behavior e.g. class="main-navigation onclick" -->
-								<!-- "animated": Enables animations on dropdowns opening e.g. class="main-navigation animated" -->
-								<!-- "with-dropdown-buttons": Mandatory class that adds extra space, to the main navigation, for the search and cart dropdowns -->
-								<!-- ================ -->
-								<div class="main-navigation  animated with-dropdown-buttons">
-
-									<!-- navbar start -->
-									<!-- ================ -->
-									<nav class="navbar navbar-default" role="navigation">
-										<div class="container-fluid">
-
-											<!-- Toggle get grouped for better mobile display -->
-											<div class="navbar-header">
-												<button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar-collapse-1">
-													<span class="sr-only">Toggle navigation</span>
-													<span class="icon-bar"></span>
-													<span class="icon-bar"></span>
-													<span class="icon-bar"></span>
-												</button>
-												
-											</div>
-
-											<!-- Collect the nav links, forms, and other content for toggling -->
-											<div class="collapse navbar-collapse" id="navbar-collapse-1">
-												<!-- main-menu -->
-												<ul class="nav navbar-nav pull-right">
-
-													<!-- mega-menu start -->													
-													<li class="mega-menu">
-														<a href="/">Home</a>
-													</li>
-													<li class="mega-menu">
-														<a href="/diseasewiki">Disease Wiki</a>
-													</li>
-													<li class="active mega-menu" style="margin-right: 50px;">
-														<a href="/blog">Blog</a>
-													</li>
-													<!-- mega-menu end -->
-												</ul>
-												<!-- main-menu end -->
-												<?php
-													if (!isset($_SESSION['id'])) {
-														echo'
-															<ul class="nav navbar pull-right nav-menu-btn">
-																<li>
-																	<a href="/signup" class="btn radius-50 btn-default-transparent btn-md">Sign Up</a>
-																</li>
-																<li>
-																	<a href="/login" class="btn radius-50 btn-default-transparent btn-md">Log In</a>
-																</li>
-															</ul>
-														';
-													}else {
-														echo '
-															<ul class="nav navbar pull-right nav-menu-btn">
-																<li class="dropdown">
-																	<a href="#" class="round-btn dropdown-toggle" data-toggle="dropdown" style="background-color: #f8f8f8;margin-right:100px;"><img src="'.$pic.'" class="img-circle" style="width: 50px;height: 50px;"></a>
-																	<ul class="dropdown-menu dropdown-menu-right dropdown-animation">
-																		<li><a href="profile.php">User Profile</a></li>
-																		<li><a href="pages/logout.php">Logout</a></li>
-																	</ul>
-																</li>
-															</ul>
-														';
-													}
-												?>
-											</div>
-
-										</div>
-									</nav>
-									<!-- navbar end -->
-
-								</div>
-								<!-- main-navigation end -->	
-								</div>
-								<!-- header-right end -->
-					
-							</div>
-						</div>
-					</div>
-					
-				</header>
-				<!-- header end -->
-			</div>
-			<!-- header-container end -->
-
+		@section('body')
 
 			<!-- breadcrumb start -->
 			<!-- ================ -->
@@ -514,137 +331,8 @@
 			<!-- footer top end -->
 			<!--
 			<!-- footer start (Add "dark" class to #footer in order to enable dark footer) -->
-			<!-- ================ -->
-			<footer id="footer" class="clearfix ">
-
-				<!-- .footer start -->
-				<!-- ================ -->
-				</section> -->
-
-			<footer class="pv-40 stats padding-bottom-clear dark-translucent-bg hovered background-img-7" style="background-position: 50% 50%;bottom: 0px;">
-				<div class="clearfix">
-					<div class="col-md-3 col-xs-6 text-center">
-						<div class="feature-box">
-							<h3><b>Support</b></h3><br />
-							<a class="footer-list-link" href="#about"> About Us</a><br>
-							<a class="footer-list-link" href="#">Contact Us</a><br>
-							<a class="footer-list-link" href="#">FAQ</a><br>
-							<a class="footer-list-link" href="#">Feedbacks</a><br>
-						</div>
-					</div>
-					<div class="col-md-3 col-xs-6 text-center">
-						<div class="feature-box">
-							<h3><b>Let Us Help You</b></h3><br />
-							<a class="footer-list-link" <?php if (isset($_SESSION['username'])) {
-								echo 'href="profile.php"';
-							} else {
-								echo 'href="signup.php"';
-							}
-							 ?> >Your Account</a><br>
-							<a class="footer-list-link" href="#">Delivery Speed</a><br>
-							<a class="footer-list-link" href="#">Help</a><br>
-						</div>
-					</div>
-					<div class="col-md-3 col-xs-6 text-center">
-						<div class="feature-box">
-							<h3><b>Resources</b></h3><br />
-							<a class="footer-list-link" href="#about">Associated Doctors</a><br>
-							<a class="footer-list-link" href="#">Medical Database</a><br>
-							<a class="footer-list-link" href="#">Links</a><br>
-						</div>
-					</div>
-					<div class="col-md-3 col-xs-6 text-center">
-						<div class="feature-box">
-							<h3><b>Support</b></h3><br />
-							<a class="footer-list-link" href="https://www.facebook.com/caremedicoindia/">Facebook</a><br>
-							<a class="footer-list-link" href="https://www.linkedin.com/company/caremedico">Twitter</a><br>
-							<a class="footer-list-link" href="http://caremedico.com/#">Google +</a><br>
-							<a class="footer-list-link" href="https://www.linkedin.com/company/caremedico">Linkden</a><br>
-						</div>
-					</div>
-				</div>
-			</footer>
-		</div>
-		<!-- page-wrapper end -->
-
-		<div id="addpost" class="modal fade">
-			<div class="modal-content" style="margin-top: 100px;margin-left: auto;margin-right: auto;width: 1000px;">
-				<a href="#" class="modal-close"><i class="fa fa-close"></i></a>
-				<div class="modal-heading">
-					<h2 style="color: #777;">Create new Post</h2>
-				</div><hr />
-				<div class="modal-body animated fadeIn">
-					<div>
-						<div class="form-group">
-							<input type="text" name="title" class="form-control" maxlength="100" placeholder="Title (Maximum 100 characters)" required></input>
-						</div>
-						<div class="form-group">
-							<input type="text" name="tags" class="form-control" placeholder="Tags" required></input>
-						</div>
-						<div class="">
-							<textarea id="txtEditor"></textarea>
-						</div>
-						<div style="display: none;">
-							<button class="btn btn-primary">Post</button>
-						</div>
-					</div>
-				</div>
-			</div>
-		</div>
-                       -->
-
-
-		<!-- JavaScript files placed at the end of the document so the pages load faster -->
-		<!-- ================================================== -->
-		<!-- Jquery and Bootstap core js files -->
-		<script type="text/javascript" src="assets/plugins/jquery.min.js"></script>
-		<script type="text/javascript" src="assets/bootstrap/js/bootstrap.min.js"></script>
-
-		<!-- Modernizr javascript -->
-		<script type="text/javascript" src="assets/plugins/modernizr.js"></script>
-
-		<!-- jQuery Revolution Slider  -->
-		<script type="text/javascript" src="assets/plugins/rs-plugin/js/jquery.themepunch.tools.min.js"></script>
-		<script type="text/javascript" src="assets/plugins/rs-plugin/js/jquery.themepunch.revolution.min.js"></script>
-
-		
-		
-
-		<!-- Isotope javascript -->
-		<script type="text/javascript" src="assets/plugins/isotope/isotope.pkgd.min.js"></script>
-		
-		<!-- Magnific Popup javascript -->
-		<script type="text/javascript" src="assets/plugins/magnific-popup/jquery.magnific-popup.min.js"></script>
-		
-		<!-- Appear javascript -->
-		<script type="text/javascript" src="assets/plugins/waypoints/jquery.waypoints.min.js"></script>
-
-		<!-- Count To javascript -->
-		<script type="text/javascript" src="assets/plugins/jquery.countTo.js"></script>
-		
-		<!-- Parallax javascript -->
-		<script src="assets/plugins/jquery.parallax-1.1.3.js"></script>
-
-		<!-- Contact form -->
-		<script src="assets/plugins/jquery.validate.js"></script>
-
-		<!-- Background Video -->
-		<script src="assets/plugins/vide/jquery.vide.js"></script>
-
-		<!-- Owl carousel javascript -->
-		<script type="text/javascript" src="assets/plugins/owl-carousel/owl.carousel.js"></script>
-		
-		<!-- SmoothScroll javascript -->
-		<script type="text/javascript" src="assets/plugins/jquery.browser.js"></script>
-		<script type="text/javascript" src="assets/plugins/SmoothScroll.js"></script>
-
-		<!-- Initialization of Plugins -->
-		<script type="text/javascript" src="assets/js/template.js"></script>
-		<script type="text/javascript" src="assets/js/format.js"></script>
-		
-		<script src="//cdn.ckeditor.com/4.5.11/basic/ckeditor.js"></script>
-		
-
+			@stop
+			@section('scriptend')
 		<script type="text/javascript">
 			$(document).ready(function() {
 				$('[data-toggle="tooltip"]').tooltip();
@@ -657,7 +345,7 @@
 				$('#addpost').modal("hide");
 			});
 		</script>
-
+@stop
 		
 	</body>
 </html>
