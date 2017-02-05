@@ -35,7 +35,7 @@ class BlogsController extends Controller
         $blog->subject = $subject;
         $blog->message = $message;
         $blog->save();
-        return view('userpage');
+        return redirect('/userpage/'.$name);
         
     }
 
