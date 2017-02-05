@@ -1,20 +1,3 @@
- <?php
-	//require_once 'inc/autoload.php';
-	//require_once('header.php');
-
-?> 
-			<!-- header-container start -->
-<div align="center">
-<script type="text/javascript" src="https://cdn.ywxi.net/js/1.js" async></script>
-<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
-<script>
-  (adsbygoogle = window.adsbygoogle || []).push({
-    google_ad_client: "ca-pub-7374848764874307",
-    enable_page_level_ads: true
-  });
-</script>
-</div>
-<script type="text/javascript" src="https://cdn.ywxi.net/js/1.js" async></script>
 <!DOCTYPE html>
 <!--[if IE 9]> <html lang="en" class="ie9"> <![endif]-->
 <!--[if !IE]><!-->
@@ -79,8 +62,17 @@
 		<!-- ================ -->
 		<div class="page-wrapper">
 		
-
-
+			<div align="center">
+			<script type="text/javascript" src="https://cdn.ywxi.net/js/1.js" async></script>
+			<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+			<script>
+			  (adsbygoogle = window.adsbygoogle || []).push({
+			    google_ad_client: "ca-pub-7374848764874307",
+			    enable_page_level_ads: true
+			  });
+			</script>
+			</div>
+			<script type="text/javascript" src="https://cdn.ywxi.net/js/1.js" async></script>
 			<div class="header-container">
 	
 				<!-- header start -->
@@ -764,6 +756,5 @@
 
 		<!-- Initialization of Plugins -->
 		<script type="text/javascript" src="{{ asset('/assets/js/template.js') }}"></script>
-		
 	</body>
 </html>
