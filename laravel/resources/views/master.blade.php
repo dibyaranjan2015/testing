@@ -279,6 +279,7 @@
 
 		<!-- Initialization of Plugins -->
 		<script type="text/javascript" src="{{ asset('/assets/js/template.js') }}"></script>
+	
 
 		@yield('scriptend')
 	</body>

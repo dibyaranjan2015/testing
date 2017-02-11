@@ -12,9 +12,10 @@ class BlogsController extends Controller
    
     public function blog(){
 
-        $blogs = DB::table('blogs')->get();
+        $blogs = Blog::paginate(10);
+         
 
-       return view('blog.blogtemp',['blogs'=>$blogs]);
+       return view('blog.blog',compact('blogs'));
     }
 
     public function index()

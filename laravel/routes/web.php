@@ -23,7 +23,7 @@ Route::get('/login','CaremedicosController@login');
 Route::post('/login/check','CaremedicosController@check');
 Route::get('/login/check','CaremedicosController@login');
 
-Route::get('/blog', 'CaremedicosController@blog');
+Route::get('/blog', 'BlogsController@blog');
 Route::get('/userpage/{name}', 'CaremedicosController@user');
 
 
@@ -33,7 +33,7 @@ Route::get('/logout','CaremedicosController@logout');
 Route::get('/userpage/blog/create', 'BlogsController@index');
 //Route::get('/userpage/blog/store', 'BlogsController@store');
 Route::post('/userpage/blog/store','BlogsController@store');
-Route::get('/blogtemp','BlogsController@blog');
+// Route::get('/blogtemp','BlogsController@blog');
 Route::get('/blog/{id}','BlogsController@blogshow');
 
 
@@ -47,3 +47,11 @@ Route::get('/blog/{id}','BlogsController@blogshow');
 // 	echo $customer ->username;
 // });
 
+
+Auth::routes();
+
+Route::get('/home', 'HomeController@index');
+
+Auth::routes();
+
+Route::get('/home', 'HomeController@index');
