@@ -36,8 +36,8 @@ onload="update_data(); setInterval(update_data,2000);"
 			<div class="breadcrumb-container">
 				<div class="container">
 					<ol class="breadcrumb">
-						<li><i class="fa fa-home pr-10"></i><a href="index.html">Home</a></li>
-						<li class="active">Blog Masonry Right Sidebar</li>
+						<li><i class="fa fa-home pr-10"></i><a href="/">Home</a></li>
+						<li class="active"> Blog </li>
 					</ol>
 				</div>
 			</div>
@@ -56,7 +56,7 @@ onload="update_data(); setInterval(update_data,2000);"
 
 							<!-- page-title start -->
 							<!-- ================ -->
-							<h1 class="page-title">Blog Masonry Right Sidebar</h1>
+							<h1 class="page-title"> Blog </h1>
 							<div class="separator-2"></div>
 							<!-- page-title end -->
 
@@ -77,8 +77,6 @@ onload="update_data(); setInterval(update_data,2000);"
 						<aside class="col-md-4 col-lg-3 col-lg-offset-1">
 							<div class="sidebar">
 								<div class="block clearfix">
-									<h3 class="title">Sidebar menu</h3>
-									<div class="separator-2"></div>
 									<nav>
 										<ul class="nav nav-pills nav-stacked">
 											<li><a href="index.php">Home</a></li>
@@ -89,19 +87,19 @@ onload="update_data(); setInterval(update_data,2000);"
 										</ul>
 									</nav>
 								</div>
-								<div class="block clearfix">
+								<!--div class="block clearfix">
 									<h3 class="title">Featured Project</h3>
 									<div class="separator-2"></div>
 									<div id="carousel-portfolio-sidebar" class="carousel slide" data-ride="carousel">
 										<!-- Indicators -->
-										<ol class="carousel-indicators">
+										<!--ol class="carousel-indicators">
 											<li data-target="#carousel-portfolio-sidebar" data-slide-to="0" class="active"></li>
 											<li data-target="#carousel-portfolio-sidebar" data-slide-to="1"></li>
 											<li data-target="#carousel-portfolio-sidebar" data-slide-to="2"></li>
 										</ol>
 
 										<!-- Wrapper for slides -->
-										<div class="carousel-inner" role="listbox">
+										<!--div class="carousel-inner" role="listbox">
 											<div class="item active">
 												<div class="image-box shadow bordered text-center mb-20">
 													<div class="overlay-container">
@@ -134,8 +132,8 @@ onload="update_data(); setInterval(update_data,2000);"
 											</div>
 										</div>
 									</div>
-								</div>
-								<div class="block clearfix">
+								</div-->
+								<!--div class="block clearfix">
 									<h3 class="title">Latest tweets</h3>
 									<div class="separator-2"></div>
 									<ul class="tweets">
@@ -148,11 +146,11 @@ onload="update_data(); setInterval(update_data,2000);"
 											<p><a href="#">@CareMedico</a> CareMedico <a href="#">http://t.co/dzLEYGeEH9</a>.</p><span>16 hours ago</span>
 										</li>
 									</ul>
-								</div>								
+								</div-->								
 								<div class="block clearfix">
 									<h3 class="title">Popular Tags</h3>
 									<div class="separator-2"></div>
-									<div class="tags-cloud">
+									<!--div class="tags-cloud">
 										<div class="tag">
 											<a href="#">energy</a>
 										</div>
@@ -213,9 +211,9 @@ onload="update_data(); setInterval(update_data,2000);"
 										<div class="tag">
 											<a href="#">books</a>
 										</div>
-									</div>
+									</div-->
 								</div>
-								<div class="block clearfix">
+								<!--div class="block clearfix">
 									<h3 class="title">Testimonial</h3>
 									<div class="separator-2"></div>
 									<blockquote class="margin-clear">
@@ -226,11 +224,11 @@ onload="update_data(); setInterval(update_data,2000);"
 										<p>CareMedico CareMedico CareMedico CareMedico CareMedico CareMedico CareMedico CareMedico  CareMedico CareMedico CareMedico </p>
 										<footer><cite title="Source Title">Steve Doe </cite></footer>
 									</blockquote>
-								</div>
+								</div-->
 								<div class="block clearfix">
 									<h3 class="title">Latest News</h3>
 									<div class="separator-2"></div>
-									<div class="media margin-clear">
+									<!--div class="media margin-clear">
 										<div class="media-left">
 											<div class="overlay-container">
 												<img class="media-object" src="images/blog-thumb-1.jpg" alt="blog-thumb">
@@ -238,7 +236,7 @@ onload="update_data(); setInterval(update_data,2000);"
 											</div>
 										</div>
 										<div class="media-body">
-											<h6 class="media-heading<ahref="blogpost.html">CareMedico </a></h6>
+											<h6 class="media-heading<a href="#">CareMedico </a></h6>
 											<p class="small margin-clear"><i class="fa fa-calendar pr-10"></i>Mar 23, 2015</p>
 										</div>
 										<hr>
@@ -283,9 +281,9 @@ onload="update_data(); setInterval(update_data,2000);"
 									</div>
 									<div class="text-right space-top">
 										<a href="blog-large-image-right-sidebar.html" class="link-dark"><i class="fa fa-plus-circle pl-5 pr-5"></i>More</a>	
-									</div>
+									</div-->
 								</div>
-								<div class="block clearfix">
+								<!--div class="block clearfix">
 									<h3 class="title">Text Sample</h3>
 									<div class="separator-2"></div>
 									<p class="margin-clear">Debitis eaque officia illo impedit ipsa earum <a href="#">cupiditate repellendus</a> corrupti nisi nemo, perspiciatis optio harum, hic laudantium nulla maiores rem sit magni neque nihil sequi temporibus. Laboriosam ipsum reiciendis iste, nobis obcaecati, a autem voluptatum odio? Recusandae officiis dicta quod qui eligendi.</p>
@@ -297,7 +295,7 @@ onload="update_data(); setInterval(update_data,2000);"
 											<i class="fa fa-search form-control-feedback"></i>
 										</div>
 									</form>
-								</div>								
+								</div-->								
 							</div>
 						</aside>
 						<!-- sidebar end -->
@@ -320,7 +318,7 @@ onload="update_data(); setInterval(update_data,2000);"
 										<h2>Waste no more time</h2>
 									</div>
 									<div class="col-sm-4">
-										<p class="mt-10"><a href="#" class="btn btn-animated btn-lg btn-gray-transparent ">Purchase<i class="fa fa-cart-arrow-down pl-20"></i></a></p>
+										<p class="mt-10"><a href="/signup" class="btn btn-animated btn-lg btn-gray-transparent ">SIGN UP<i class="fa fa-cart-arrow-down pl-20"></i></a></p>
 									</div>
 								</div>
 							</div>

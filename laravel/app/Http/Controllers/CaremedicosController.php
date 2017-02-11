@@ -26,13 +26,13 @@ class CaremedicosController extends Controller
 
 
     // public function test(){
-   	//    $users = Care_user::all();
-   	//    return view('test',compact('users'));
-   	// }
+    //    $users = Care_user::all();
+    //    return view('test',compact('users'));
+    // }
 
     //register
-   	public function store(Request $request){
-   		// $datainput = $request->all();
+    public function store(Request $request){
+      // $datainput = $request->all();
       $name = $request->input('name');
       $email = $request->input('email');
       $mob = $request->input('mob');
@@ -64,7 +64,8 @@ class CaremedicosController extends Controller
                  );
                   session_start();
                   Session::put('name',$name);
-                  return redirect('/userpage/'.$name);
+                  //return redirect('/userpage/'.$name);
+                  return redirect('/');
               }
       }
       else if ($rows!=0) {
@@ -74,8 +75,8 @@ class CaremedicosController extends Controller
       {
           return view('signup',['error'=>'A user with that mobile number is already registered! Please sign up with a different mobile number.']);
       }
-   		
-   	}
+      
+    }
 
      // login
     public function check(Request $request){
@@ -96,7 +97,8 @@ class CaremedicosController extends Controller
               session_start();
               Session::put('name',$name);
 
-              return redirect('/userpage/'.$name);
+              //return redirect('/userpage/'.$name);
+              return redirect('/');
             }else{
                if($acctype_user == 1){$message = 'Login as Doctor';  }
                if($acctype_user == 2){$message ='Login as Patient'; } 
@@ -104,11 +106,12 @@ class CaremedicosController extends Controller
                return view('/login',['message' => $message]);
             }
           }else{
-            echo 'incorrect email or password';
+            $message= 'Incorrect password';
+            return view('/login',['message' => $message]);
           }
         }else{
-          $message = 'you must register first';
-          return redirect('/login');
+          $message = 'You must register first';
+          return view('/login',['message' => $message]);
         }
     }
 

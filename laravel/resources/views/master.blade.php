@@ -13,7 +13,7 @@
 		<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
 		<!-- Favicon -->
-		<link rel="shortcut icon" href="images/favicon.ico">
+		<link rel="shortcut icon" href="{{ asset('/images/favicon.ico')}}">
 
 		<!-- Web Fonts -->
 		<link href='http://fonts.googleapis.com/css?family=Roboto:400,300,300italic,400italic,500,500italic,700,700italic' rel='stylesheet' type='text/css'>
@@ -22,25 +22,25 @@
 		<link href='http://fonts.googleapis.com/css?family=PT+Serif' rel='stylesheet' type='text/css'>
 
 		<!-- Bootstrap core CSS -->
-		<link href="assets/bootstrap/css/bootstrap.css" rel="stylesheet">
+		<link href="{{ asset('/assets/bootstrap/css/bootstrap.css')}}" rel="stylesheet">
 
 		<!-- Font Awesome CSS -->
-		<link href="assets/fonts/font-awesome/css/font-awesome.css" rel="stylesheet">
+		<link href="{{ asset('/assets/fonts/font-awesome/css/font-awesome.css')}}" rel="stylesheet">
 
 		<!-- Fontello CSS -->
-		<link href="assets/fonts/fontello/css/fontello.css" rel="stylesheet">
+		<link href="{{ asset('/assets/fonts/fontello/css/fontello.css')}}" rel="stylesheet">
 
 		<!-- Plugins -->
-		<link href="assets/plugins/magnific-popup/magnific-popup.css" rel="stylesheet">
-		<link href="assets/plugins/rs-plugin/css/settings.css" rel="stylesheet">
-		<link href="assets/css/animations.css" rel="stylesheet">
-		<link href="assets/plugins/owl-carousel/owl.carousel.css" rel="stylesheet">
-		<link href="assets/plugins/owl-carousel/owl.transitions.css" rel="stylesheet">
-		<link href="assets/plugins/hover/hover-min.css" rel="stylesheet">		
+		<link href="{{ asset('/assets/plugins/magnific-popup/magnific-popup.css')}}" rel="stylesheet">
+		<link href="{{ asset('/assets/plugins/rs-plugin/css/settings.css')}}" rel="stylesheet">
+		<link href="{{ asset('/assets/css/animations.css')}}" rel="stylesheet">
+		<link href="{{ asset('/assets/plugins/owl-carousel/owl.carousel.css')}}" rel="stylesheet">
+		<link href="{{ asset('/assets/plugins/owl-carousel/owl.transitions.css')}}" rel="stylesheet">
+		<link href="{{ asset('/assets/plugins/hover/hover-min.css')}}" rel="stylesheet">		
 
 		<!-- the project core CSS file -->
-		<link href="assets/css/style.css" rel="stylesheet" >
-		<link href="assets/css/editor.css" rel="stylesheet">
+		<link href="{{ asset('/assets/css/style.css')}}" rel="stylesheet" >
+		<link href="{{ asset('/assets/css/editor.css')}}" rel="stylesheet">
 		@yield('head')
 	</head>
 	<body class="no-trans front-page transparent-header  "@yield('bodyclass')>
@@ -146,10 +146,10 @@
 
 													<!-- mega-menu start -->													
 													<li class="active mega-menu">
-														<a href="/">Home</a>
+														<a action="{{ url('/') }}">Home</a>
 													</li>
 													<li class="mega-menu">
-														<a href="/">Disease Wiki</a>
+														<a href="action="{{ url('/') }}">Disease Wiki</a>
 													</li>
 													<li class="mega-menu" style="margin-right: 50px;">
 														<a href="/blog">Blog</a>
