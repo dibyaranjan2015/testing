@@ -203,7 +203,7 @@
 							<a class="footer-list-link" <?php if (isset($_SESSION['username'])) {
 								echo 'href="profile.php"';
 							} else {
-								echo 'href="signup.php"';
+								echo 'href="/signup"';
 							}
 							 ?> >Your Account</a><br>
 							<a class="footer-list-link" href="#">Delivery Speed</a><br>
