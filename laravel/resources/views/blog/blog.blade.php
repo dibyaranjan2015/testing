@@ -81,11 +81,11 @@
 								<div class="block clearfix">
 									<nav>
 										<ul class="nav nav-pills nav-stacked">
-											<li><a href="index.php">Home</a></li>
-											<li class="active"><a href="blog.php">Blog</a></li>
-											<li><a href="diseasewiki.php">Disease Wiki</a></li>
-											<li><a href="about.html">About</a></li>
-											<li><a href="contact.html">Contact</a></li>
+											<li><a href="/">Home</a></li>
+											<li class="active"><a href="/blog">Blog</a></li>
+											<li><a href="/">Disease Wiki</a></li>
+											<li><a href="#">About</a></li>
+											<li><a href="#">Contact</a></li>
 										</ul>
 									</nav>
 								</div>
