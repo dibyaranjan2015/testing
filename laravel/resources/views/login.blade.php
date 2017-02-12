@@ -244,7 +244,7 @@
 					</div>
 				</div>
 			</div>
-			<p style="font-size: 1.1em;text-align: center;line-height: .7em;"><a href="forgot.php" style="color: red;">Forgot Password?</a></p>
+			<p style="font-size: 1.1em;text-align: center;line-height: .7em;"><a href="#" style="color: red;">Forgot Password?</a></p>
 			<p style="font-size: 1.1em;text-align: center;line-height: .7em;color: purple;">New User?<a href="/signup">Click Here</a></p>
 		</div>
 
