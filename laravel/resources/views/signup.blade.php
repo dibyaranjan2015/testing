@@ -221,7 +221,7 @@
 					</form>
 				</div>
 			</div>
-			<p id="log-redirect" style="font-size: 1.3em;text-align: center;line-height: 1em;color: green;text-shadow: 1px 1px #ffffff;font-weight: bold;" class="animated zoomIn infinite">Already Registered?<a href="login.php" style="color: navy;">Click Here</a></p>
+			<p id="log-redirect" style="font-size: 1.3em;text-align: center;line-height: 1em;color: green;text-shadow: 1px 1px #ffffff;font-weight: bold;" class="animated zoomIn infinite">Already Registered?<a href="/login" style="color: navy;">Click Here</a></p>
 		</div>
 
 

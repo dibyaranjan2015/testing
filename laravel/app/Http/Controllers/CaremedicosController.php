@@ -67,11 +67,11 @@ class CaremedicosController extends Controller
               }
       }
       else if ($rows!=0) {
-        return view('signup',['error'=>'A user with that email id is already registered! Please sign up with a different email id.']);
+        return view('signup',['error'=>'A user with that email id is already registered!']);
       }
       else
       {
-          return view('signup',['error'=>'A user with that mobile number is already registered! Please sign up with a different mobile number.']);
+          return view('signup',['error'=>'A user with that mobile number is already registered! ']);
       }
       
     }
