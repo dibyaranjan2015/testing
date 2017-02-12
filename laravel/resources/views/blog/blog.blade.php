@@ -54,7 +54,7 @@
 												</header>
 												<div class="blogpost-content">
 													<p><?php
-													    echo substr($blog->message,0,100);
+													    echo substr($blog->message,0,80);
 													    ?>.........</p>
 												</div>
 												<footer class="clearfix">
