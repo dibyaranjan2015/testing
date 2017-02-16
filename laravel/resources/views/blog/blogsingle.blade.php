@@ -1,22 +1,12 @@
-@extends('master')
-@section('body')
-		<div class="breadcrumb-container">
-				<div class="container">
-					<ol class="breadcrumb">
-						<li><i class="fa fa-home pr-10"></i><a href="/">Home</a></li>
+@extends('blog.blog_master')
+@section('navbar')
+	<li><i class="fa fa-home pr-10"></i><a href="/">Home</a></li>
 						<li> <a href="/blog">Blog </a></li>
 						<li class="active"> {{$blog_per->subject}} </li>
-					</ol>
-				</div>
-			</div>
-			<section class="main-container">
+@stop
 
-				<div class="container">
-					<div class="row">
-
-						<!-- main start -->
-						<!-- ================ -->
-						<div class="main col-md-12">
+		@section('blog_body')
+			<div class="main col-md-8">
 
 							<!-- page-title start -->
 							<!-- ================ -->
@@ -32,19 +22,9 @@
 								- {{$blog_per->name}}
 								</div>
 							</div>
-						</div>
-						<div class="row">
-
-						<!-- main start -->
-						<!-- ================ -->
-						<div class="col-md-10 col-md-ofset-1">
 							</br>
 							<p style="text-indent: 100px;"> {{$blog_per->message}}</p>
 							</br>
-						</div>
-					</div>
-				</div>
-			</section>	
-
-
+			</div>
 @stop
+		
