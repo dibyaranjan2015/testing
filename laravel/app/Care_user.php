@@ -8,7 +8,7 @@ class Care_user extends Model
 {
   protected $table = 'care_users';
 
-  protected $fillable = ['name','email','mob','password','acctype'];
+  protected $fillable = ['name','email','mob','password','acctype','resetlink'];
 
-  protected $hidden = ['password'];
+  protected $hidden = ['password','resetlink'];
 }

@@ -207,7 +207,11 @@
 
 		<div style="width: 26%;margin-left: 37%;margin-right: 37%;padding-top: 50px;">
 			<h1><span class="logo-font"><span class="text-default">Care Medico</span></span></h1><br />
-			  <div style="color: red; font-size: 1.2em; text-align: center;"> <?php if(isset($message)){echo $message;} ?> </div>
+			  <div style="color: red; font-size: 1.2em; text-align: center;"> 
+			  	<?php if(isset($message)){echo $message;} 
+			  		if(isset($email_msg)){echo $email_msg;}
+			  		if(isset($_GET['reset']) && $_GET['reset'] == 1){ echo 'Password Reset Successfully  Login with new password!!'; }?>
+			  </div>
 			<div class="widget-container" style="border-radius: 5px;">
 				<div class="heading">
 					<h3 style="color: rgb(5,150,250);margin: 5px;"><b>Login</b></h3><hr />
@@ -269,7 +273,7 @@
 					</div>
 				</div>
 			</div>
-			<p style="font-size: 1.1em;text-align: center;line-height: .7em;"><a href="#" style="color: red;">Forgot Password?</a></p>
+			<p style="font-size: 1.1em;text-align: center;line-height: .7em;"><a href="/login/forgot" style="color: red;">Forgot Password?</a></p>
 			<p style="font-size: 1.1em;text-align: center;line-height: .7em;color: purple;">New User?<a href="/signup">Click Here</a></p>
 		</div>
 

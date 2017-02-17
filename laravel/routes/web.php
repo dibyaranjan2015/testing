@@ -45,5 +45,9 @@ Route::get('/blog/{id}','BlogsController@blogshow');
 // 	echo $customer ->username;
 // });
 
+Route::get('/login/forgot','ResetpasswordController@index');
+Route::post('/login/forgot/send','ResetpasswordController@send_mail');
+Route::get('/resetpassword/{link}/{id}','ResetpasswordController@reset');
+Route::post('/resetpassword/store','ResetpasswordController@store');
 
 

@@ -19,7 +19,8 @@ class CreateCareUsersTable extends Migration
             $table->string('email')->unique();
             $table->string('mob');
             $table->string('password');
-            $table->string('acctype');  
+            $table->string('acctype');
+            $table->string('resetlink');  
             $table->timestamps();
         });
     }
