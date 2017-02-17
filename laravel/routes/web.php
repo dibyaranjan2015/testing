@@ -11,9 +11,7 @@
 |
 */
 
-Route::get('/', function () {
-    return view('careindex');
-});
+Route::get('/','CaremedicosController@home');
 
 Route::get('/signup', 'CaremedicosController@signup');
 Route::post('/signup/store','CaremedicosController@store');

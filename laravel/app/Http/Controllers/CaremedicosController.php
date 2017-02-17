@@ -11,7 +11,10 @@ use Session;
 class CaremedicosController extends Controller
 {
   
-
+    public function home()
+    {
+      return view('careindex');
+    }
     public function signup(){
        return view('signup');
     }

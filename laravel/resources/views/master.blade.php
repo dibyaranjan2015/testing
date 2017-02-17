@@ -140,16 +140,18 @@
 											</div>
 
 											<!-- Collect the nav links, forms, and other content for toggling -->
-											<div class="collapse navbar-collapse" id="navbar-collapse-1">
+											
+											<!-- Collect the nav links, forms, and other content for toggling -->
+											<div class="hidden-xs collapse navbar-collapse">
 												<!-- main-menu -->
 												<ul class="nav navbar-nav pull-right">
 
 													<!-- mega-menu start -->													
 													<li class="active mega-menu">
-														<a action="{{ url('/') }}">Home</a>
+														<a href="/">Home</a>
 													</li>
 													<li class="mega-menu">
-														<a href="action="{{ url('/') }}">Disease Wiki</a>
+														<a href="/">Disease Wiki</a>
 													</li>
 													<li class="mega-menu" style="margin-right: 50px;">
 														<a href="/blog">Blog</a>
@@ -166,6 +168,31 @@
 													</li>
 													<!-- mega-menu end -->
 												</ul>
+											</div>
+											<div class="visible-xs">
+												<div class="collapse navbar-collapse" id="navbar-collapse-1">
+												<!-- main-menu -->
+												<ul class="nav navbar-nav pull-right">
+
+													<!-- mega-menu start -->													
+													<li class="active mega-menu">
+														<a href="/">Home</a>
+													</li>
+													<li class="mega-menu">
+														<a href="/">Disease Wiki</a>
+													</li>
+													<li class="mega-menu">
+														<a href="/blog">Blog</a>
+													</li>
+													<li class="mega-menu">
+														<a href="/signup">Sign Up</a>
+													</li>
+													<li class="mega-menu">
+														<a href="/login">Log In</a>
+													</li>
+												</ul>
+												</div>
+
 											</div>
 
 										</div>
