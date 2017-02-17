@@ -91,13 +91,13 @@ class CaremedicosController extends Controller
           $email_db = $user->email;
           $password_db = $user->password;
           $acctype_db = $user->acctype;
+
         
           if($email_user == $email_db  && $password_user == $password_db){
             if($acctype_user == $acctype_db){
               
               session_start();
               Session::put('name',$name);
-
               //return redirect('/userpage/'.$name);
               return redirect('/');
             }else{

@@ -147,25 +147,35 @@
 												<ul class="nav navbar-nav pull-right">
 
 													<!-- mega-menu start -->													
-													<li class="active mega-menu">
+													<li id ="home" class="mega-menu">
 														<a href="/">Home</a>
 													</li>
-													<li class="mega-menu">
+													<li id ="wiki" class="mega-menu">
 														<a href="/">Disease Wiki</a>
 													</li>
-													<li class="mega-menu" style="margin-right: 50px;">
+													<li id ="blog" class="mega-menu" style="margin-right: 50px;">
 														<a href="/blog">Blog</a>
 													</li>
 													<!-- mega-menu end -->
 												</ul>
 												<!-- main-menu end -->
 												<ul class="nav navbar pull-right nav-menu-btn">
-													<li>
+													
+														@if(Session::has('name'))
+														<li id ="profile"> 
+														<a href='/profile' class="btn radius-50 btn-default-transparent btn-md">Profile</a>
+														</li>
+														<li id ="logout">
+														<a href="/logout" class="btn radius-50 btn-default-transparent btn-md">Log Out</a>
+														</li>
+														@else
+														<li id ="signup">
 														<a href="/signup" class="btn radius-50 btn-default-transparent btn-md">Sign Up</a>
-													</li>
-													<li>
+														</li>
+														<li id ="login">
 														<a href="/login" class="btn radius-50 btn-default-transparent btn-md">Log In</a>
-													</li>
+														</li>
+														@endif
 													<!-- mega-menu end -->
 												</ul>
 											</div>
@@ -184,12 +194,22 @@
 													<li class="mega-menu">
 														<a href="/blog">Blog</a>
 													</li>
-													<li class="mega-menu">
-														<a href="/signup">Sign Up</a>
-													</li>
-													<li class="mega-menu">
+													@if(Session::has('name')) 
+														
+														<li id ="logout" class="mega-menu">
+														<a href='/logout'> Sign out </a>
+														</li>
+														<li id ="profile" class="mega-menu">
+														<a href ='/profile'>Profile</a>
+														</li>
+														@else
+														<li id ="signup" class="mega-menu">
+														<a href="/signup" >Sign Up</a>
+														</li>
+														<li id ="login" class="mega-menu">
 														<a href="/login">Log In</a>
-													</li>
+														</li>
+														@endif
 												</ul>
 												</div>
 

@@ -484,3 +484,8 @@
 				</div>
 			</section> -->
 			@stop
+			@section('scriptend')
+				<script type="text/javascript">
+					$( "#home" ).addClass( "active" );
+				</script>
+			@stop

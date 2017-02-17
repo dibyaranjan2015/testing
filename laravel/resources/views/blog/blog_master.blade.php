@@ -295,6 +295,7 @@
 			$('.modal-close').click(function() {
 				$('#addpost').modal("hide");
 			});
+			$( "#blog" ).addClass( "active" );
 		</script>
 @stop
 		
