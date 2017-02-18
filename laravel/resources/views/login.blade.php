@@ -210,7 +210,10 @@
 			  <div style="color: red; font-size: 1.2em; text-align: center;"> 
 			  	<?php if(isset($message)){echo $message;} 
 			  		if(isset($email_msg)){echo $email_msg;}
-			  		if(isset($_GET['reset']) && $_GET['reset'] == 1){ echo 'Password Reset Successfully  Login with new password!!'; }?>
+			  		?>
+			  </div>
+			  <div style="color: green; font-size: 1.2em; text-align: center;"> 
+			  <?php if(isset($_GET['reset']) && $_GET['reset'] == 1){ echo 'Password Reset Successfully  Login with new password!!'; }?>
 			  </div>
 			<div class="widget-container" style="border-radius: 5px;">
 				<div class="heading">

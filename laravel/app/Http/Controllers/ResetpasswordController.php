@@ -4,7 +4,9 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
+use Illuminate\Mail\Mailer;
 use App\Care_user;
+use App\Mail\SendMail;
 
 class ResetpasswordController extends Controller
 {
@@ -12,7 +14,7 @@ class ResetpasswordController extends Controller
     	return view('mail.index');
     }
 
-    public function send_mail(Request $request){
+    public function send_mail(Request $request,Mailer $mailer){
     	$email = $request->input('resetmail');
     	$user = DB::table('care_users')->where('email', $email)->first();
 
@@ -25,10 +27,12 @@ class ResetpasswordController extends Controller
             ->update(['resetlink' => $link]);
             $id = $user->id;
 
-            return view('mail.resetmail',['link'=>$link,'id'=>$id]);
+            // $mailer->to($email)->send(new SendMail($link,$id));
+
+          return view('mail.resetmail',['link'=>$link,'id'=>$id]);
 
     		$email_msg = 'Reset link is sent to your Email Id!!';
-    		//return view('login',['email_msg'=>$email_msg]);
+    		// return view('login',['email_msg'=>$email_msg]);
 
     	}else{
     		$message = 'Email is not registered';

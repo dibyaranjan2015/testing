@@ -61,10 +61,11 @@ class CaremedicosController extends Controller
               }else{
                 // Care_user::create($datainput);
                DB::table('care_users')->insert(
-                   ['username'=>$name , 'email' => $email ,'mob'=>$mob,'password' =>$hashpassword , 'acctype'=>$acctype]
+                   ['username'=>$name , 'email' => $email ,'mob'=>$mob,'password' =>$hashpassword , 'acctype'=>$acctype,'resetlink'=>'']
                  );
                   session_start();
                   Session::put('name',$name);
+                   Session::put('id',$id);
                   //return redirect('/userpage/'.$name);
                   return redirect('/');
               }
@@ -87,6 +88,7 @@ class CaremedicosController extends Controller
         $acctype_user = $request->input('type');
         $user = DB::table('care_users')->where('email', $email_user)->first();
         if($user){
+          $id = $user->id;
           $name = $user->username;
           $email_db = $user->email;
           $password_db = $user->password;
@@ -98,6 +100,7 @@ class CaremedicosController extends Controller
               
               session_start();
               Session::put('name',$name);
+              Session::put('id',$id);
               //return redirect('/userpage/'.$name);
               return redirect('/');
             }else{
