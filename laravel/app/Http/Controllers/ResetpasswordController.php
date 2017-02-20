@@ -69,8 +69,8 @@ class ResetpasswordController extends Controller
     	    }
     		
     	}else{
-    		$error = 'Passwords doesnot match';
-    		return view('mail.newpass',['error'=>$error]);
+    		$error = "Passwords didn't match";
+    		return redirect()->back()->with('error', $error); 
     	}
 
     }
