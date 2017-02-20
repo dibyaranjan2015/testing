@@ -42,7 +42,12 @@ class BlogsController extends Controller
 
     public function blogshow($id){
         $blog_per =  DB::table('blogs')->where('id', $id)->first();
-        return view('blog.blogsingle',['blog_per'=>$blog_per]);
+        if($blog_per){
+            return view('blog.blogsingle',['blog_per'=>$blog_per]);
+        }else{
+            return redirect('/blog');
+        }
+        
     }
 
 
