@@ -28,7 +28,16 @@ class PatientController extends Controller
     		$id = Session::get('id');
     		$user = DB::table('care_users')->where('username',$name)->where('id', $id)->first();
 
-    		
+    		 $this->validate($request, [
+                'gender' =>'required',
+                'image' => 'image|mimes:jpeg,png,jpg,gif,svg|max:1040',
+                'zipcode' =>'required',
+                'country' =>'required',
+                'state'=>'required',
+                'district'=>'required',
+                'city'=>'required'
+             ]);
+
             $mob = $request->input('mob');
             $gender = $request->input('gender');
             $country = $request->input('country');
@@ -38,22 +47,24 @@ class PatientController extends Controller
     		$str_address = ($request->input('str_address')).($request->input('landmark'));
             $blood = ($request->input('bloodgroup')).($request->input('rhesusfactor'));
             $im = $request->input('identificationmarks');
-
-             if($request->hasFile('image')){
+            $zipcode = $request->input('zipcode');
+            
+            if($request->hasFile('image')){
                 $image = $request->file('image');
                 $img_name = $image->getClientOriginalName();
 
                 $image->move(public_path().'/uploads/', $img_name);
+
             }else{
                 //default image name
-                $img_name = 'default';
+                $img_name = 'default.jpg';
             }
 
     		$unique_user = DB::table('patients')->where('user_id',$id)->first();
     		if($unique_user){
     			DB::table('patients')
 	            ->where('user_id', $id)
-	            ->update(['image' => $img_name,'gender'=>$gender,'country'=>$country,'state'=>$state,'district'=>$district,'city'=>$city,'str_address'=>$str_address,'blood_group'=>$blood,'identification_mark'=>$im]);
+	            ->update(['image' => $img_name,'gender'=>$gender,'country'=>$country,'state'=>$state,'district'=>$district,'city'=>$city,'str_address'=>$str_address,'zipcode'=>$zipcode,'blood_group'=>$blood,'identification_mark'=>$im]);
                 DB::table('care_users')
                 ->where('id', $id)
                 ->update(['mob' => $mob]);
@@ -61,7 +72,7 @@ class PatientController extends Controller
 
     		}else{
     			DB::table('patients')->insert(
-                   [  'user_id' => $id ,'image' => $img_name,'gender'=>$gender,'country'=>$country,'state'=>$state,'district'=>$district,'city'=>$city,'str_address'=>$str_address,'blood_group'=>$blood,'identification_mark'=>$im]
+                   [  'user_id' => $id ,'image' => $img_name,'gender'=>$gender,'country'=>$country,'state'=>$state,'district'=>$district,'city'=>$city,'str_address'=>$str_address,'zipcode'=>$zipcode,'blood_group'=>$blood,'identification_mark'=>$im]
                 );
                 DB::table('care_users')
                 ->where('id', $id)

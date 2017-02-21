@@ -19,6 +19,20 @@ option,select,textarea
 						<div class="col-md-8 col-md-offset-2">
 							<h2 class="text-center"> <strong>PROFILE</strong></h2>
 							<div class="separator"></div>
+							
+							
+							@if (count($errors) > 0 )
+								<div class="alert alert-danger" style="text-align: center;">
+									<strong>Whoops!</strong> There were some problems with your input.<br><br>
+									<ul>
+
+										@foreach ($errors->all() as $error)
+											{{ $error }}</br>
+										@endforeach
+									</ul>
+								</div>
+							@endif	
+							
 							<form class="form-horizontal" action="/profile/store" method="POST" enctype = "multipart/form-data" style="padding: 0 20px 0 20px;">
 							{{csrf_field()}}
 							    <div class="form-group has-feedback">
@@ -63,39 +77,46 @@ option,select,textarea
 								<div class="form-group has-feedback">
 									<label class="control-label col-xs-3">Country</label>
 									<div class="controls control-label col-xs-9">
-								        <select id="country" name="country"></select>
+								        <select id="country" name="country" value="{{Request::old('country') }}"></select>
 								    </div>
 								</div>
 								<div class="form-group has-feedback">
 									<label class="control-label col-xs-3">State</label>
 									<div class="controls control-label col-xs-9">
-								        <select name="state" id="state"></select>
+								        <select name="state" id="state" value="{{Request::old('state') }}"></select>
 								    </div>
 								</div>
 								<div class="form-group has-feedback">
 							        <label for="district" class="control-label col-xs-3">District</label> 
 							        <div class="col-xs-9">
-									<input type="text" name="district" class="form-control" required ></input>
+									<input type="text" name="district" class="form-control" value="{{Request::old('district') }}" ></input>
 									</div>
 							    </div>
 							    <div class="form-group has-feedback">
 							        <label for="city" class="control-label col-xs-3">City</label> 
 							        <div class="col-xs-9">
-									<input type="text" name="city" class="form-control" required ></input>
+									<input type="text" name="city" class="form-control" value="{{Request::old('city') }}" ></input>
 									</div>
 							    </div>
 							    <div class="form-group has-feedback">
 							        <label for="landmark" class="control-label col-xs-3">Landmark</label> 
 							        <div class="col-xs-9">
-									<input type="text" name="landmark" class="form-control"></input>
+									<input type="text" name="landmark" class="form-control" value="{{Request::old('landmark') }}"></input>
 									</div>
 							    </div>
 							    <div class="form-group has-feedback">
 							        <label for="street" class="control-label col-xs-3">Street Address</label> 
 							        <div class="col-xs-9">
-									<textarea class="form-conrol" name="street"></textarea>
+									<textarea class="form-conrol" name="street" value="{{Request::old('street') }}"></textarea>
 									</div>
 							    </div>
+							    <div class="form-group has-feedback">
+							        <label for="landmark" class="control-label col-xs-3">ZipCode</label> 
+							        <div class="col-xs-9">
+									<input type="text" name="zipcode" class="form-control" value="{{Request::old('zipcode') }}"></input>
+									</div>
+							    </div>
+
 
     							<div class="form-group has-feedback">
 							        <label for="bloodgroup" class="control-label col-xs-3">Blood Group</label>
@@ -122,7 +143,7 @@ option,select,textarea
     							<div class="form-group has-feedback">
 							        <label for="identificationmarks" class="control-label col-xs-3">Identification Marks</label> 
 							        <div class="col-xs-9">
-									<textarea class="form-conrol" name="identificationmarks"></textarea>
+									<textarea class="form-conrol" name="identificationmarks" value="{{Request::old('identificationmarks') }}"></textarea>
 									</div>
 							    </div>
 							    <div class="form-group has-feedback">

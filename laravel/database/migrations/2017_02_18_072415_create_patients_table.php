@@ -23,6 +23,7 @@ class CreatePatientsTable extends Migration
             $table->string('district');
             $table->string('state');
             $table->string('country');
+            $table->string('zipcode');
             $table->string('gender');
             $table->string('blood_group');
             $table->text('identification_mark');
