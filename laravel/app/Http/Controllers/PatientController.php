@@ -29,19 +29,33 @@ class PatientController extends Controller
     		$user = DB::table('care_users')->where('username',$name)->where('id', $id)->first();
 
     		$image = $request->file('image');
-    		$address = $request->input('address');
-
+            $mob = $request->input('mob');
+            $gender = $request->input('gender');
+            $country = $request->input('country');
+            $state = $request->input('state');
+            $district = $request->input('district');
+            $city = $request->input('city');
+    		$str_address = ($request->input('str_address')).($request->input('landmark'));
+            $blood = ($request->input('bloodgroup')).($request->input('rhesusfactor'));
+            $im = $request->input('identificationmarks');
     		$unique_user = DB::table('patients')->where('user_id',$id)->first();
     		if($unique_user){
     			DB::table('patients')
 	            ->where('user_id', $id)
-	            ->update(['image' => $image,'address'=>$address]);
-    		 return redirect('/');
+	            ->update(['image' => $image,'gender'=>$gender,'country'=>$country,'state'=>$state,'district'=>$district,'city'=>$city,'str_address'=>$str_address,'bloodgroup'=>$bloodgroup,'identification_mark'=>$im]);
+                DB::table('care_users')
+                ->where('user_id', $id)
+                ->update(['mob' => $mob]);
+    		 //return redirect('/');
+
     		}else{
     			DB::table('patients')->insert(
-                   [  'user_id' => $id ,'image'=>$image,'address' =>$address ]
+                   [  'user_id' => $id ,'image' => $image,'gender'=>$gender,'country'=>$country,'state'=>$state,'district'=>$district,'city'=>$city,'str_address'=>$str_address,'bloodgroup'=>$bloodgroup,'identification_mark'=>$im]
                 );
-    		  return redirect('/');
+                DB::table('care_users')
+                ->where('user_id', $id)
+                ->update(['mob' => $mob]);
+    		  //return redirect('/');
     		}
     		 
     	}else{

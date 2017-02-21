@@ -52,5 +52,5 @@ Route::post('/resetpassword/store','ResetpasswordController@store');
 
 
 Route::get('/profile','PatientController@index');
-Route::post('/profile','PatientController@store');
+Route::post('/profile/store','PatientController@store');
 

@@ -19,7 +19,7 @@ option,select,textarea
 						<div class="col-md-8 col-md-offset-2">
 							<h2 class="text-center"> <strong>PROFILE</strong></h2>
 							<div class="separator"></div>
-							<form class="form-horizontal" action="#" method="POST" enctype = "multipart/form-data" style="padding: 0 20px 0 20px;">
+							<form class="form-horizontal" action="/profile/store" method="POST" enctype = "multipart/form-data" style="padding: 0 20px 0 20px;">
 							{{csrf_field()}}
 							    <div class="form-group has-feedback">
 							        <label for="text" class="control-label col-xs-3">Name</label> 
