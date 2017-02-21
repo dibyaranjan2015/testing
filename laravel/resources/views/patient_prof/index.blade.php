@@ -57,7 +57,7 @@ option,select,textarea
 								<div class="form-group has-feedback">
 									<label for="image" class="control-label col-xs-3">Upload Image:</label>
 									<div class="col-xs-9">
-										<input type="file" name="file_upload" value="">
+										<input type="file" name="image" value="">
 									</div>
 								</div>
 								<div class="form-group has-feedback">
