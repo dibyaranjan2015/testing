@@ -271,7 +271,7 @@
 							<a class="footer-list-link" href="https://www.facebook.com/caremedicoindia/">Facebook</a><br>
 							<a class="footer-list-link" href="https://www.linkedin.com/company/caremedico">Twitter</a><br>
 							<a class="footer-list-link" href="http://caremedico.com/#">Google +</a><br>
-							<a class="footer-list-link" href="https://www.linkedin.com/company/caremedico">Linkden</a><br>
+							<a class="footer-list-link" href="https://www.linkedin.com/company/caremedico">LinkedIn</a><br>
 						</div>
 					</div>
 				</div>

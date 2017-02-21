@@ -24,14 +24,14 @@ option,select,textarea
 							    <div class="form-group has-feedback">
 							        <label for="text" class="control-label col-xs-3">Name</label> 
 							        <div class="col-xs-9">
-									<input type="text" name="name" class="form-control" placeholder="Name" required value="{{$user->username}}"></input>
+									<input type="text"  disabled="" name="name" class="form-control" placeholder="Name" required value="{{$user->username}}"></input>
 									<i class="fa fa-user form-control-feedback"></i>
 									</div>
 							    </div>
 							    <div class="form-group has-feedback">
 							        <label for="email" class="control-label col-xs-3">Email</label>
 							        <div class="col-xs-9">
-							            <input type="email" name="email" class="form-control" placeholder="Email Id" required value="{{$user->email }}"></input>
+							            <input type="email" disabled="" name="email" class="form-control" placeholder="Email Id" required value="{{$user->email }}"></input>
 										<i class="fa fa-envelope form-control-feedback"></i>
 										<span class="email-feedback" style="color: #a94442;text-align: center;"><?php if (isset($e)&& $e == 2) {echo "This email already exists."; } ?></span>
 							        </div>
