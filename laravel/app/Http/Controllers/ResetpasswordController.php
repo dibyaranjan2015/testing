@@ -19,7 +19,7 @@ class ResetpasswordController extends Controller
     	$user = DB::table('care_users')->where('email', $email)->first();
 
     	if($user){
-    		$link = md5(md5($email.'@+$@#$%^&^%$%^&*'.rand(1,999999999999999)));
+    		$link = md5(md5($email.'@+$@#$%^&^%$%^&*'.rand(1,999999)));
 
     		
     		DB::table('care_users')

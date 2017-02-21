@@ -18,9 +18,15 @@ class CreatePatientsTable extends Migration
             $table->integer('user_id')->unsigned();
             $table->foreign('user_id')->references('id')->on('care_users');
             $table->string('image');
-            $table->string('address');
+            $table->text('str_address');
+            $table->string('city');
+            $table->string('district');
+            $table->string('state');
+            $table->string('country');
+            $table->string('gender');
+            $table->string('blood_group');
+            $table->text('identification_mark');
             $table->timestamps();
-
         });
     }
 
