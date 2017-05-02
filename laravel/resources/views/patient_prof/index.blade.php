@@ -31,7 +31,8 @@ option,select,textarea
 										@endforeach
 									</ul>
 								</div>
-							@endif	
+							@endif
+								
 							
 							<form class="form-horizontal" action="/profile/store" method="POST" enctype = "multipart/form-data" style="padding: 0 20px 0 20px;">
 							{{csrf_field()}}
@@ -161,10 +162,10 @@ option,select,textarea
 							        <label for="eye" class="control-label col-xs-9" style="text-align: left;">Can the applicant readily distinguish the pigmentary colors, red and green?&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;</label>
 							        <div class="col-xs-3">
 							    		<label class="radio-inline">
-							    			<input type="radio" name="eye" value="yes">Yes&nbsp;&nbsp;
+							    			<input type="radio" name="eye1" value="yes">Yes&nbsp;&nbsp;
 							    		</label>
 							    		<label class="radio-inline">
-    										<input type="radio" name="eye" value="no">No
+    										<input type="radio" name="eye1" value="no">No
     									</label>
     								</div>
     							</div>
@@ -172,10 +173,10 @@ option,select,textarea
 							        <label for="eye" class="control-label col-xs-9" style="text-align: left;">In your opinion, is he able to distinguish with his eye sight at a distance of 25 meters in good day amotor car number plate? &nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;</label>
 							        <div class="col-xs-3">
 							    		<label class="radio-inline">
-							    			<input type="radio" name="eye" value="yes">Yes&nbsp;&nbsp;
+							    			<input type="radio" name="eye3" value="yes">Yes&nbsp;&nbsp;
 							    		</label>
 							    		<label class="radio-inline">
-    										<input type="radio" name="eye" value="no">No
+    										<input type="radio" name="eye3" value="no">No
     									</label>
     								</div>
     							</div>

@@ -23,8 +23,10 @@
 								</div>
 							</div>
 							</br>
-							<p style="text-indent: 100px;"> {{$blog_per->message}}</p>
+							<p style="text-indent: 100px;"> <?php echo html_entity_decode($blog_per->message)?></p>
 							</br>
+							<div class="fb-comments" data-href="https://www.facebook.com/caremedicoindia/posts/1478706672204612" data-numposts="2"></div>
+							<div class="fb-like" data-href="https://www.facebook.com/caremedicoindia/posts/1478706672204612" data-layout="standard" data-action="like" data-size="small" data-show-faces="true" data-share="true"></div>
 			</div>
 @stop
 		

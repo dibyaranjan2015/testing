@@ -16,7 +16,11 @@ class PatientController extends Controller
     		$id = Session::get('id');
     		$user = DB::table('care_users')->where('username',$name)->where('id', $id)->first();
     		$email = $user->email;
-		    return view('patient_prof.index',['user'=>$user]);
+            $user1 = DB::table('patients')->where('user_id', $id)->first();
+            if($user1==null)
+                return view('patient_prof.index',['user'=>$user]);
+            else
+                return redirect('/profile/show');
     	}else{
     		 return redirect('/');
     	}

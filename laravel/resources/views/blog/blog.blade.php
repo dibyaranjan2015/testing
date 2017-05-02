@@ -35,9 +35,6 @@
 													</div>
 												</header>
 												<div class="blogpost-content">
-													<p><?php
-													    echo substr($blog->message,0,80);
-													    ?>.........</p>
 												</div>
 												<footer class="clearfix">
 													<div class="tags pull-left"><i class="icon-tags"></i> <a href="#">tag 1</a>, <a href="#">tag 2</a>, <a href="#">long tag 3</a></div>
