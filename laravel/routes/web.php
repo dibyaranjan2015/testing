@@ -55,3 +55,11 @@ Route::get('/profile','PatientController@index');
 Route::post('/profile/store','PatientController@store');
 Route::get('/profile/show','PatientController@show');
 
+
+// Admin panel
+Route::get('/admin','AdminController@index');
+Route::get('/admin/signup','AdminController@view');
+Route::post('/admin/store','AdminController@store');
+Route::post('/admin/check','AdminController@check');
+Route::get('/admin/logout','AdminController@logout');
+

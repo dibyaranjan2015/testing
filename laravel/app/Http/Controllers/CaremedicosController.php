@@ -45,30 +45,30 @@ class CaremedicosController extends Controller
       $rows1 = DB::table('care_users')->where('mob', $mob)->count();
       if(($rows==0)&&($rows1==0))
       {
-             $error = '';
-             if($name==''){
-               $error = 'Enter your name </br>';
-               return view('signup',['error'=>$error]);
+         $error = '';
+         if($name==''){
+           $error = 'Enter your name </br>';
+           return view('signup',['error'=>$error]);
 
-             }elseif($email == ''){
-               $error = 'Enter the email Id';
-               return view('signup',['error'=>$error]);
+         }elseif($email == ''){
+           $error = 'Enter the email Id';
+           return view('signup',['error'=>$error]);
 
-             }elseif($password == '' || $password1=='' || ($password != $password1)){
-               $error ='Error in password';
-                return view('signup',['error'=>$error]);
+         }elseif($password == '' || $password1=='' || ($password != $password1)){
+           $error ='Error in password';
+            return view('signup',['error'=>$error]);
 
-              }else{
-                // Care_user::create($datainput);
-               DB::table('care_users')->insert(
-                   ['username'=>$name , 'email' => $email ,'mob'=>$mob,'password' =>$hashpassword , 'acctype'=>$acctype,'resetlink'=>'']
-                 );
-                  session_start();
-                  Session::put('name',$name);
-                   Session::put('id',$id);
-                  //return redirect('/userpage/'.$name);
-                  return redirect('/');
-              }
+          }else{
+            // Care_user::create($datainput);
+           DB::table('care_users')->insert(
+               ['username'=>$name , 'email' => $email ,'mob'=>$mob,'password' =>$hashpassword , 'acctype'=>$acctype,'resetlink'=>'']
+             );
+              session_start();
+              Session::put('name',$name);
+               Session::put('id',$id);
+              //return redirect('/userpage/'.$name);
+              return redirect('/');
+          }
       }
       else if ($rows!=0) {
         return view('signup',['error'=>'A user with that email id is already registered!']);
