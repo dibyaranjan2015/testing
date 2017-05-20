@@ -12,9 +12,9 @@ use App\Http\Controllers\Controller;
 class AdminController extends Controller
 {
     public function index(){
-        if(Session::has('ad_name'))
+        if(Session::has('ad_name') && Session::has('ad_type'))
         {
-          return view('admin/main_admin');
+          return redirect('admin/domain');
         }
         else
         {
@@ -24,7 +24,21 @@ class AdminController extends Controller
 
 
     public function view(){
-        return view('admin/admin_signup');  
+        if(Session::has('ad_name') && Session::get('ad_type')==1){
+            return view('admin/admin_signup');  
+        }else{
+            return redirect()->back();
+        }
+    }
+
+    public function domain(){
+        if(Session::has('ad_name') && Session::has('ad_type')){
+            return view('admin/main_admin');
+        }else{
+            return redirect()->back();
+        }
+
+        
     }
     
     public function check(Request $request){
@@ -40,19 +54,19 @@ class AdminController extends Controller
               Session::put('ad_name',$ad_name);
               Session::put('ad_type',$ad_type);
               if($ad_type==1){
-                return view('admin/main_admin');
+                return redirect('admin/domain');
               }
               if($ad_type==2){
-                return view('admin/main_admin');
+                return redirect('admin/domain');
               }
               if($ad_type==3){
-                echo 'mc3';
+                return redirect('admin/domain');
               }
               if($ad_type==4){
-                echo 'mc4';
+                return redirect('admin/domain');
               }
               if($ad_type==5){
-                echo 'mc5';
+                return redirect('admin/domain');
               }
 
         }else{
@@ -81,6 +95,17 @@ class AdminController extends Controller
         return redirect("/admin");
       }
     }
+
+
+    public function showmember(Request $request){
+   
+        $members = Member::paginate(15);
+        return view('admin/editmember',compact('members'))
+            ->with('i', ($request->input('page', 1) - 1) * 15);
+   
+    }
+
+
     public function logout(){
           Session::forget('name');
           Session::flush();

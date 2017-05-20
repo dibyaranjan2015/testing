@@ -116,7 +116,7 @@
 									<li><a href="#">Change Password</a></li>
 									@if(Session::get('ad_type')==1)
 									<li><a href="/admin/signup">Add New Member</a></li>
-									<li><a href="#">Remove Member</a></li>
+									<li><a href="/admin/domain/show_members">Remove Member</a></li>
 									@endif
 								</ul>
 							</div>

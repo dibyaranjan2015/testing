@@ -61,6 +61,13 @@ Route::get('/admin','AdminController@index');
 Route::get('/admin/signup','AdminController@view');
 Route::post('/admin/store','AdminController@store');
 Route::post('/admin/check','AdminController@check');
+Route::get('/admin/domain','AdminController@domain');
 Route::get('/admin/blog/create','AdminController@createblog');
 Route::get('/admin/logout','AdminController@logout');
+Route::get('/admin/domain/show_members','AdminController@showmember');
+Route::get('/admin/domain/show_members','AdminController@showmember');
+Route::get('/admin/domain/show_members','AdminController@showmember');
+
+
+
 
