@@ -61,6 +61,12 @@ option,select,textarea
 									</div>
 								</div>
 								<div class="form-group has-feedback">
+							        <label for="district" class="control-label col-xs-3">Age</label> 
+							        <div class="col-xs-9">
+									<input type="number" name="age" class="form-control" value="{{Request::old('age') }}" ></input>
+									</div>
+							    </div>
+								<div class="form-group has-feedback">
 							        <label for="gender" class="control-label col-xs-3">Gender</label>
 							        <div class="col-xs-9">
 							    		<label class="radio-inline">
@@ -78,7 +84,7 @@ option,select,textarea
 								<div class="form-group has-feedback">
 									<label class="control-label col-xs-3">Country</label>
 									<div class="controls control-label col-xs-9">
-								        <select id="country" name="country" value="{{Request::old('country') }}"></select>
+								        <select id="country" name="country" value="@"></select>
 								    </div>
 								</div>
 								<div class="form-group has-feedback">

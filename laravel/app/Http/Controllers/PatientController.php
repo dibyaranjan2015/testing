@@ -39,9 +39,10 @@ class PatientController extends Controller
                 'country' =>'required',
                 'state'=>'required',
                 'district'=>'required',
-                'city'=>'required'
+                'city'=>'required',
+                'age'=>'required'
              ]);
-
+            $age = $request->input('age');
             $mob = $request->input('mob');
             $gender = $request->input('gender');
             $country = $request->input('country');
@@ -68,7 +69,7 @@ class PatientController extends Controller
     		if($unique_user){
     			DB::table('patients')
 	            ->where('user_id', $id)
-	            ->update(['image' => $img_name,'gender'=>$gender,'country'=>$country,'state'=>$state,'district'=>$district,'city'=>$city,'str_address'=>$str_address,'zipcode'=>$zipcode,'blood_group'=>$blood,'identification_mark'=>$im]);
+	            ->update(['image' => $img_name,'gender'=>$gender,'country'=>$country,'state'=>$state,'district'=>$district,'city'=>$city,'str_address'=>$str_address,'age'=>$age,'zipcode'=>$zipcode,'blood_group'=>$blood,'identification_mark'=>$im]);
                 DB::table('care_users')
                 ->where('id', $id)
                 ->update(['mob' => $mob]);
@@ -76,7 +77,7 @@ class PatientController extends Controller
 
     		}else{
     			DB::table('patients')->insert(
-                   [  'user_id' => $id ,'image' => $img_name,'gender'=>$gender,'country'=>$country,'state'=>$state,'district'=>$district,'city'=>$city,'str_address'=>$str_address,'zipcode'=>$zipcode,'blood_group'=>$blood,'identification_mark'=>$im]
+                   [  'user_id' => $id ,'image' => $img_name,'gender'=>$gender,'country'=>$country,'state'=>$state,'district'=>$district,'city'=>$city,'str_address'=>$str_address,'age'=>$age,'zipcode'=>$zipcode,'blood_group'=>$blood,'identification_mark'=>$im]
                 );
                 DB::table('care_users')
                 ->where('id', $id)
@@ -94,9 +95,10 @@ class PatientController extends Controller
             $name =  Session::get('name');
             $id =  Session::get('id');
             $user = DB::table('patients')->where('user_id',$id)->first();
+            $user1 = DB::table('care_users')->where('id',$id)->first();
             $image_name = "asset('/uploads/".$user->image."')";
           
-            return view('patient_prof.home',['user'=>$user,'name'=>$name,'image_name'=>$image_name]);
+            return view('patient_prof.home',['user'=>$user,'name'=>$name,'image_name'=>$image_name,'user1'=>$user1]);
         }
 
     }
