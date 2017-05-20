@@ -20,7 +20,7 @@
                            <input type="password" id="password" name="admin_pass" class="form-control" placeholder="Password(minimum 6 characters)" required></input>
                            <i class="fa fa-lock form-control-feedback"></i>
                         </div>
-                        <button type="submit" id="submit0" name="submit0" class="btn btn-primary form-control">Register</button>
+                        <button type="submit" id="submit0" name="submit0" class="btn btn-primary form-control">Log In</button>
                   </div>
 
                </form>

@@ -64,7 +64,7 @@
 @stop
 @section('body')
 
-@if(Session::has('ad_email') && Session::has('ad_type') && Session::get('ad_type')==1) 
+@if(Session::has('ad_name') && Session::has('ad_type')) 
 
 <div id="page-start"></div>
 
@@ -74,7 +74,7 @@
 				<div class="container">
 					<div class="row">
 						<div class="col-md-8 col-md-offset-2">
-							<h2 class="text-center">{{Session::get('ad_email')}}</h2>
+							<h2 class="text-center">{{ucfirst(Session::get('ad_name'))}}</h2>
 							<div class="separator"></div>
 						</div>
 						<div class="col-md-4 ">
@@ -85,8 +85,10 @@
 								<!-- <a href="page-services.html">Read More <i class="pl-5 fa fa-angle-double-right"></i></a> -->
 								<ul style="text-align: left;">
 									<li><a href="#">Add Blog</a></li>
-									<li><a href="#">Edit Blog</a></li>
+									@if(Session::get('ad_type')==1)
+									<li><a href="/admin/blog/create">Edit Blog</a></li>
 									<li><a href="#">Remove Blog</a></li>
+									@endif
 								</ul>
 							</div>
 						</div>
@@ -98,8 +100,10 @@
 								<!-- <a href="page-services.html">Read More <i class="pl-5 fa fa-angle-double-right"></i></a> -->
 								<ul style="text-align: left;">
 									<li><a href="#">Add Medicine</a></li>
+									@if(Session::get('ad_type')==1)
 									<li><a href="#">Edit Medicine</a></li>
 									<li><a href="#">Remove Medicine</a></li>
+									@endif
 								</ul>
 							</div>
 						</div>
@@ -108,13 +112,20 @@
 								<span class="icon default-bg circle"><i class="fa icon-snow"></i></span>
 								<h3>Others</h3>
 								<div class="separator clearfix"></div>
+								<ul style="text-align: left;">
+									<li><a href="#">Change Password</a></li>
+									@if(Session::get('ad_type')==1)
+									<li><a href="/admin/signup">Add New Member</a></li>
+									<li><a href="#">Remove Member</a></li>
+									@endif
+								</ul>
 							</div>
 						</div>
 					</div>
 					<div class="row">
 						<div class="col-md-2 col-md-offset-5">
 						<div class="ph-float">
-							<a href='/logout' class='ph-button ph-btn-red'>Log Out</a>
+							<a href='/admin/logout' class='ph-button ph-btn-red'>Log Out</a>
 						</div> 
 						</div>
 					</div>   

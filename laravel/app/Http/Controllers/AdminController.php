@@ -12,7 +12,14 @@ use App\Http\Controllers\Controller;
 class AdminController extends Controller
 {
     public function index(){
-        return view('admin/adminindex');	
+        if(Session::has('ad_name'))
+        {
+          return view('admin/main_admin');
+        }
+        else
+        {
+          return view('admin/adminindex');  
+        }
     }
 
 
@@ -28,14 +35,15 @@ class AdminController extends Controller
         if($user){
 
             $ad_type = $user->m_type;
+            $ad_name = $user->m_name;
               session_start();
-              Session::put('ad_email',$ad_email);
+              Session::put('ad_name',$ad_name);
               Session::put('ad_type',$ad_type);
               if($ad_type==1){
                 return view('admin/main_admin');
               }
               if($ad_type==2){
-                echo 'mc2';
+                return view('admin/main_admin');
               }
               if($ad_type==3){
                 echo 'mc3';
@@ -48,21 +56,35 @@ class AdminController extends Controller
               }
 
         }else{
-            echo 'madarchod thik se input daal nahito nikal yaha se';
+            $error = "Username or password does not match";
+            return view('admin/adminindex',['error'=>$error]);
         }
     }
 
     public function store(Request $request){
         $a_name = $request->input('admin_name');
         $a_pass = $request->input('admin_pass');
+        $a_pass1 = $request->input('admin_pass1');
         $a_email = $request->input('admin_email');
         $a_type = $request->input('a_type');
         $hashpassword = md5(md5($a_pass));
-
-        DB::table('members')->insert(
+        if($a_pass!=$a_pass1)
+        {
+          $error="Password does not match!!";
+          return view('admin.admin_signup',['error'=>$error]);
+        }
+        else
+         {
+           DB::table('members')->insert(
                ['m_name'=>$a_name , 'm_email' => $a_email ,'m_password' =>$hashpassword , 'm_type'=>$a_type]
              );
-        echo 'madarchod ho gaya';
+        return redirect("/admin");
+      }
+    }
+    public function logout(){
+          Session::forget('name');
+          Session::flush();
+      return redirect('/admin');
     }
     
 }
