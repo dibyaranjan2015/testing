@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 use App\Member;
+use App\Blog;
 use Session;
 use Illuminate\Support\Facades\Schema;
 use App\Http\Controllers\Controller;
@@ -104,7 +105,85 @@ class AdminController extends Controller
             ->with('i', ($request->input('page', 1) - 1) * 15);
    
     }
+    public function createblog()
+    {
+        if(Session::has('ad_name'))
+        {
+          return view('admin/blog/create');
+        }
+        else
+        {
+          return redirect('/admin');
+        }
+    }
+    public function storeblog(Request $request)
+    {
+        if(Session::has('ad_name'))
+        {
+          $name = Session::get('ad_name');
+          $subject = $request->input('title');
+          $message = $request->input('content');
 
+
+          $blog = new Blog;
+          $blog->name = $name;
+          $blog->subject = $subject;
+          $blog->message = $message;
+          $blog->save();
+          return redirect('/admin');
+        }
+        else
+        {
+          return redirect('/admin');
+        }
+    }
+    public function updateblog(Request $request)
+    {
+        if(Session::has('ad_name'))
+        {
+          $subject = $request->input('title');
+          $message = $request->input('content');
+          $id= $request->input('id');
+          DB::table('blogs')
+              ->where('id', $id)
+              ->update(['subject'=>$subject,'message'=>$message]);
+          return redirect('/admin/blog/view');
+        }
+        else
+        {
+          return redirect('/admin');
+        }
+    }
+    public function viewblog()
+    {
+        if((Session::has('ad_name'))&&(Session::get('ad_type')==1))
+        {
+          $blogs = Blog::paginate(10);
+          return view('admin/blog/view',compact('blogs'));
+        }
+        else
+        {
+          return redirect('/admin');
+        }
+    }
+    public function editblog($id)
+    {
+        if((Session::has('ad_name'))&&(Session::get('ad_type')==1))
+        {
+          $blog_per =  DB::table('blogs')->where('id', $id)->first();
+          if($blog_per){
+              return view('admin/blog/edit',['blog_per'=>$blog_per]);
+          }else{
+              return redirect('admin/blog/view');
+          }
+          
+        }
+        else
+        {
+          return redirect('/admin');
+        }
+    }
+    
 
     public function logout(){
           Session::forget('name');
