@@ -84,9 +84,9 @@
 								<div class="separator clearfix"></div>
 								<!-- <a href="page-services.html">Read More <i class="pl-5 fa fa-angle-double-right"></i></a> -->
 								<ul style="text-align: left;">
-									<li><a href="#">Add Blog</a></li>
+									<li><a href="/admin/blog/create">Add Blog</a></li>
 									@if(Session::get('ad_type')==1)
-									<li><a href="/admin/blog/create">Edit Blog</a></li>
+									<li><a href="/admin/blog/view">Edit Blog</a></li>
 									<li><a href="#">Remove Blog</a></li>
 									@endif
 								</ul>
