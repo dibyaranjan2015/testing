@@ -26,7 +26,7 @@ class AdminController extends Controller
 
     public function view(){
         if(Session::has('ad_name') && Session::get('ad_type')==1){
-            return view('admin/admin_signup');  
+            return view('admin/member/signup');  
         }else{
             return redirect()->back();
         }
@@ -77,33 +77,96 @@ class AdminController extends Controller
     }
 
     public function store(Request $request){
-        $a_name = $request->input('admin_name');
-        $a_pass = $request->input('admin_pass');
-        $a_pass1 = $request->input('admin_pass1');
-        $a_email = $request->input('admin_email');
-        $a_type = $request->input('a_type');
-        $hashpassword = md5(md5($a_pass));
-        if($a_pass!=$a_pass1)
+      if(Session::has('ad_name')&&Session::get('ad_type')==1)
         {
-          $error="Password does not match!!";
-          return view('admin.admin_signup',['error'=>$error]);
+          $a_name = $request->input('admin_name');
+          $a_pass = $request->input('admin_pass');
+          $a_pass1 = $request->input('admin_pass1');
+          $a_email = $request->input('admin_email');
+          $a_type = $request->input('a_type');
+          $hashpassword = md5(md5($a_pass));
+          if($a_pass!=$a_pass1)
+          {
+            $error="Password does not match!!";
+            return view('admin/member/signup',['error'=>$error]);
+          }
+          else
+           {
+             DB::table('members')->insert(
+                 ['m_name'=>$a_name , 'm_email' => $a_email ,'m_password' =>$hashpassword , 'm_type'=>$a_type]
+               );
+             return redirect("/admin");
+          }
         }
         else
-         {
-           DB::table('members')->insert(
-               ['m_name'=>$a_name , 'm_email' => $a_email ,'m_password' =>$hashpassword , 'm_type'=>$a_type]
-             );
-        return redirect("/admin");
-      }
+        {
+          return redirect('/admin');
+        }
+
     }
 
 
     public function showmember(Request $request){
-   
-        $members = Member::paginate(15);
-        return view('admin/editmember',compact('members'))
-            ->with('i', ($request->input('page', 1) - 1) * 15);
-   
+        if(Session::has('ad_name')&&Session::get('ad_type')==1)
+        {
+          $members = Member::paginate(10);
+          return view('admin/member/view',compact('members'));
+        }
+        else
+        {
+          return redirect('/admin');
+        }
+    }
+     public function editmember($m_id)
+    {
+        if((Session::has('ad_name'))&&(Session::get('ad_type')==1))
+        {
+          $member_per =  DB::table('members')->where('m_id', $m_id)->first();
+          if($member_per){
+              return view('admin/member/edit',['member_per'=>$member_per]);
+          }else{
+              return redirect('admin/domain/show_members');
+          }
+          
+        }
+        else
+        {
+          return redirect('/admin');
+        }
+    }
+    public function updatemember(Request $request)
+    {
+        if(Session::has('ad_name')&&(Session::get('ad_type')==1))
+        {
+          $m_type = $request->input('m_type');
+          $id= $request->input('id');
+          DB::table('members')
+              ->where('m_id', $id)
+              ->update(['m_type'=>$m_type]);
+          return redirect('/admin/domain/show_members');
+        }
+        else
+        {
+          return redirect('/admin');
+        }
+    }
+    public function removemember($m_id)
+    {
+        if((Session::has('ad_name'))&&(Session::get('ad_type')==1))
+        {
+          $member_per =  DB::table('members')->where('m_id', $m_id)->first();
+          if($member_per){
+              DB::table('members')->where('m_id', $m_id)->delete();
+              return redirect('admin/domain/show_members');
+          }else{
+              return redirect('admin/domain/show_members');
+          }
+          
+        }
+        else
+        {
+          return redirect('/admin');
+        }
     }
     public function createblog()
     {
