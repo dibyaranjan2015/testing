@@ -75,5 +75,4 @@ Route::get('/admin/member/{m_id}/edit','AdminController@editmember');
 Route::post('/admin/member/update','AdminController@updatemember');
 Route::get('/admin/member/{m_id}/remove','AdminController@removemember');
 
-
-
+Route::get('/retailer','RetailerController@index');
