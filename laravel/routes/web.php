@@ -75,4 +75,12 @@ Route::get('/admin/member/{m_id}/edit','AdminController@editmember');
 Route::post('/admin/member/update','AdminController@updatemember');
 Route::get('/admin/member/{m_id}/remove','AdminController@removemember');
 
+//retailer
 Route::get('/retailer','RetailerController@index');
+Route::post('/retailer/store','RetailerController@store');
+Route::post('/retailer/check','RetailerController@check');
+Route::get('/retailer/signup','RetailerController@signup');
+Route::get('/retailer/domain','RetailerController@domain');
+Route::get('/retailer/logout','RetailerController@logout');
+
+
