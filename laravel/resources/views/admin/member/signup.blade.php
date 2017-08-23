@@ -12,11 +12,11 @@
                      {{csrf_field()}}
                   <div>
                         <div class="form-group has-feedback">
-                           <input type="text" name="admin_name" class="form-control" placeholder="Member Name" required value="{{Request::old('name') }}"></input>
+                           <input type="text" name="admin_name" class="form-control" placeholder="Member Name" required value="{{Request::old('admin_name') }}"></input>
                            <i class="fa fa-user form-control-feedback"></i>
                         </div>
                         <div class="form-group has-feedback">
-                           <input type="email" name="admin_email" class="form-control" placeholder="Email Id" required value="{{Request::old('email') }}"></input>
+                           <input type="email" name="admin_email" class="form-control" placeholder="Email Id" required value="{{Request::old('admin_email') }}"></input>
                            <i class="fa fa-envelope form-control-feedback"></i>
                            <span class="email-feedback" style="color: #a94442;text-align: center;"><?php if (isset($e)&& $e == 2) {echo "This email already exists."; } ?></span>
                         </div

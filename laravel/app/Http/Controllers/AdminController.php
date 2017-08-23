@@ -25,6 +25,7 @@ class AdminController extends Controller
 
 
     public function view(){
+        //return view('admin/member/signup');
         if(Session::has('ad_name') && Session::get('ad_type')==1){
             return view('admin/member/signup');  
         }else{
@@ -246,7 +247,41 @@ class AdminController extends Controller
           return redirect('/admin');
         }
     }
-    
+    public function blogToolbarConfig($id)
+    {
+        if((Session::has('ad_name'))&&(Session::get('ad_type')==1))
+        {
+          $blog_per =  DB::table('blogs')->where('id', $id)->first();
+          if($blog_per){
+              return view('admin/blog/toolbarcofigurator/index',['blog_per'=>$blog_per]);
+          }else{
+              return redirect('admin/blog/view');
+          }
+          
+        }
+        else
+        {
+          return redirect('/admin');
+        }
+    }
+    public function deleteblog($id)
+    {
+        if((Session::has('ad_name'))&&(Session::get('ad_type')==1))
+        {
+          $blog_per =  DB::table('blogs')->where('id', $id)->first();
+          if($blog_per){
+              DB::table('blogs')->where('id', $id)->delete();
+              return redirect('admin/blog/view');
+          }else{
+              return redirect('admin/blog/view');
+          }
+          
+        }
+        else
+        {
+          return redirect('/admin');
+        }
+    }
 
     public function logout(){
           Session::forget('name');

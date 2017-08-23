@@ -66,6 +66,8 @@ Route::get('/admin/blog/create','AdminController@createblog');
 Route::post('/admin/blog/store','AdminController@storeblog');
 Route::get('/admin/blog/view','AdminController@viewblog');
 Route::get('/admin/blog/{id}/edit','AdminController@editblog');
+Route::get('/admin/blog/{id}/delete','AdminController@deleteblog');
+Route::get('/admin/blog/{id}/edit/toolbarconfigurator','AdminController@blogToolbarConfig');
 Route::post('/admin/blog/update','AdminController@updateblog');
 Route::get('/admin/logout','AdminController@logout');
 Route::get('/admin/domain/show_members','AdminController@showmember');

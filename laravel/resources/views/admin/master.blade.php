@@ -101,18 +101,28 @@
 					
 					<div class="container-fluid">
 						<div class="row">
-							<div class="col-md-3 col-md-offset-4" style="margin-left: 38.5%">
+							<div class="col-md-1">
+								<a href="/admin">
+									<button type="button" class="btn btn-default">Back</button>
+								</a>
+							</div>
+							<div class="col-md-4 col-md-offset-3" style="margin-left: 25%;">
 								<!-- header-left start -->
 								<!-- ================ -4>
 								<div class="header-center clearfix">
 
 									<!-- logo -->
 									<div id="logo" class="logo">
-										<h3><a class="logo1" href="/"><b>CARE MEDICO</b></a></h3>
+										<h3><b><a class="logo1" href="/">CARE MEDICO</a> <a class="logo1" href="/admin">ADMIN </a></b></h3>
 									</div>
 									
 								</div>
 								<!-- header-left end -->
+								<div class="col-md-offset-3 col-md-1" style="margin-left: 25%;">
+									<a href="/admin">
+										<button type="button" class="btn btn-success">Home</button>
+									</a>
+								</div>
 
 							</div>
 						</div>
